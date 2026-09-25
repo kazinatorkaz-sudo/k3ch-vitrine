@@ -2,6 +2,7 @@ import "./styles.css";
 import { copy } from "./config.js";
 import { loadTarifs } from "./tarifs.js";
 import { renderLabel } from "./label.js";
+import { renderDondolie } from "./dondolie.js";
 
 document.documentElement.classList.add("js");
 
@@ -72,6 +73,7 @@ function setupReveal() {
 
 applyVisuals();
 renderLabel(document.querySelector("[data-label-list]"));
+renderDondolie(document.querySelector("[data-dondolie-list]"), document.querySelector("[data-dondolie-lightbox]"));
 setupNavigation();
 setupReveal();
 loadTarifs(document.querySelector("[data-tarifs]"));

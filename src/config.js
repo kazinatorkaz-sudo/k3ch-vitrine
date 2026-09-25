@@ -195,8 +195,8 @@ export const copy = {
   dondolieEmblem: {
     src: `${import.meta.env.BASE_URL}dondolie-emblem.png`,
     alt: "Emblème Dondolie en or — fourmi, symbole peace & love et cœur.",
-    width: 1200,
-    height: 1200,
+    width: 1400,
+    height: 1400,
   },
   contactTitle: "Contactez-nous",
   contactFallback: "Les coordonnées seront publiées ici.",
