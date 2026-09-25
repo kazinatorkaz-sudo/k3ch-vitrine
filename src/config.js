@@ -112,8 +112,8 @@ export const copy = {
   mediaLockup: {
     src: `${import.meta.env.BASE_URL}brand/k3ch-logo-principal.svg`,
     alt: "K3CH Music & Media — Maison K3CH Production, Alger.",
-    width: 725,
-    height: 660,
+    width: 791,
+    height: 726,
   },
   atelierTitle: "Atelier",
   atelierIntro:
