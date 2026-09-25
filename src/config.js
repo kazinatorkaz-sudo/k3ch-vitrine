@@ -10,7 +10,7 @@ export const brand = {
   city: "Alger",
   tagline: "Studio · Music · Media",
   /** Chemin public. Laisser vide pour le lockup typographique K3CH. */
-  logoSrc: `${import.meta.env.BASE_URL}logo.png`,
+  logoSrc: `${import.meta.env.BASE_URL}brand/k3ch-logo-horizontal.svg`,
   logoAlt: "Maison K3CH Production",
 };
 
@@ -110,10 +110,10 @@ export const copy = {
     height: 1086,
   },
   mediaLockup: {
-    src: `${import.meta.env.BASE_URL}k3ch-media-lockup.jpg`,
-    alt: "K3CH Media — Maison K3CH Production, Alger.",
-    width: 1792,
-    height: 1008,
+    src: `${import.meta.env.BASE_URL}brand/k3ch-logo-principal.svg`,
+    alt: "K3CH Music & Media — Maison K3CH Production, Alger.",
+    width: 725,
+    height: 660,
   },
   atelierTitle: "Atelier",
   atelierIntro:

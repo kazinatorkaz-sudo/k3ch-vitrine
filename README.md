@@ -67,13 +67,13 @@ Le bouton **Réserver** ouvre WhatsApp (`wa.me`) avec un message prérempli (inc
 
 ## Logo officiel
 
-Le monogramme (arbre géométrique) se trouve dans `public/logo.png`. Il est branché via `brand.logoSrc` dans `src/config.js` et s’affiche dans la navigation, **sans recadrage ni retouche**. Le hero reste un manifesto typographique ; le logo n’est pas redessiné.
+Les logos officiels (extraits en vectoriel de la charte) sont dans `public/brand/` : `k3ch-logo-horizontal.svg` (navigation, pied de page, branché via `brand.logoSrc`), `k3ch-logo-principal.svg` (hero, bloc Media), `k3ch-emblem.svg`, `k3ch-logo-emblem-k3ch.svg`, `k3ch-picto.svg` (repère des titres). Règles : voir `CHARTE.md`. L’ancien `public/logo.png` est conservé mais n’est plus utilisé.
 
 Pour le remplacer : déposer le nouveau fichier au même chemin (ou un autre dans `public/`), puis mettre à jour `brand.logoSrc` et `brand.logoAlt`. Laisser `logoSrc` vide pour revenir au lockup typographique **K3CH**.
 
 Ne pas redessiner la marque. Conserver le ratio (largeur automatique, hauteur contrainte en CSS).
 
-Le lockup **K3CH Media** (`public/k3ch-media-lockup.jpg`) n’est pas le marqueur de navigation : il habite le bloc Media de l’atelier.
+Le bloc Media de l’atelier affiche le logo principal officiel ; l’ancien lockup **K3CH Media** (`public/k3ch-media-lockup.jpg`, hors charte) est conservé mais n’est plus utilisé.
 
 ## Photos
 
@@ -81,12 +81,12 @@ Les visuels publics sont dans `public/` (et `public/works/`). Chemins et légend
 
 | Fichier | Usage |
 | --- | --- |
-| `public/logo.png` | Marque de navigation |
+| `public/brand/*.svg` | Logos officiels (navigation, hero, bloc Media, pied de page, favicon) |
 | `public/works/lost-era-duo.jpg` | Réalisation mise en avant — LOST ERA |
 | `public/works/lost-era-psyconce.jpg` | Affiche LOST ERA / PSYCONCE |
 | `public/works/spotlight-papers.jpg` | Atmosphère Atelier / Création |
 | `public/equipe-k3ch.jpg` | Section Équipe |
-| `public/k3ch-media-lockup.jpg` | Bloc Media (atelier) |
+| `public/k3ch-media-lockup.jpg` | Ancien lockup (hors charte, non utilisé) |
 | `public/dondolie-emblem.png` | Emblème Dondolie (teaser merch) |
 
 Ne pas inventer de noms de clients au-delà de ce qui figure sur les visuels (LOST ERA, PSYCONCE).
@@ -125,7 +125,7 @@ One-page, ancres internes :
 2. **Maison** — grand titre, pitch, grille Studio / Music / Media
 3. **Réalisations** — grille visuelle LOST ERA (visuel + affiche PSYCONCE)
 4. **Équipe** — photo de la maison
-5. **Atelier** — atmosphère Création, puis étapes numérotées (Media avec lockup K3CH Media)
+5. **Atelier** — atmosphère Création, puis étapes numérotées (Media avec le logo principal officiel)
 6. **Offre** — grille tarifaire chargée depuis le Google Sheet (packs en cartes + listes par catégorie), CTA WhatsApp
 7. **Parcours** — Intention → Création → Réalisation
 8. **Dondolie** — teaser merch optionnel (`features.dondolieTeaser`), emblème en visuel principal

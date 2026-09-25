@@ -1,14 +1,25 @@
 :root {
-  --bg: #0b0b0b;
-  --ivory: #f2f0eb;
-  --ivory-mute: #c9c8c3;
-  --ivory-dim: #a6a6a2;
-  --copper: #bbc7a1; /* accent charte */
-  --surface: #1b1b1b;
-  --black: #000000;
-  --media-blue: #3d5eff;
-  --line: rgb(242 240 235 / 0.14);
-  --font: "Montserrat", "Segoe UI", sans-serif;
+  /* Charte graphique K3CH — palette officielle (6 couleurs, rien d'autre). */
+  --obsidian: #0b0b0b; /* Obsidian Black — fond principal */
+  --black: #000000; /* Deep Black */
+  --graphite: #1b1b1b; /* Graphite — surfaces */
+  --soft-grey: #a6a6a2; /* Soft Grey — texte courant, légendes */
+  --off-white: #f2f0eb; /* Off White — titres, logo */
+  --accent: #bbc7a1; /* Accent (sauge) — survol, focus, repères */
+
+  /* Alias historiques (tous mappés sur la palette). */
+  --bg: var(--obsidian);
+  --ivory: var(--off-white);
+  --ivory-mute: var(--soft-grey);
+  --ivory-dim: var(--soft-grey);
+  --copper: var(--accent);
+  --surface: var(--graphite);
+  /* Filets : Soft Grey / Off White en transparence (aucune teinte hors charte). */
+  --line: rgb(166 166 162 / 0.28);
+  --line-strong: var(--soft-grey);
+  /* Dégradé de fond des planches de la charte : Graphite → Obsidian. */
+  --charte-gradient: linear-gradient(160deg, var(--graphite) 0%, var(--obsidian) 100%);
+  --font: "Montserrat", sans-serif;
   --space: clamp(1.35rem, 5.5vw, 5.25rem);
   --section: clamp(5.5rem, 16vw, 11rem);
   --content: min(84rem, calc(100% - 2 * var(--space)));
@@ -142,14 +153,15 @@ a:hover {
 .brand-mark img,
 .nav-logo {
   display: block;
-  height: 2.55rem;
+  height: 2.35rem;
   width: auto;
 }
 
+/* Lockup typographique de secours : K3CH espacé, comme le logotype. */
 .brand-lockup {
   font-size: 0.95rem;
-  font-weight: 500;
-  letter-spacing: 0.22em;
+  font-weight: 400;
+  letter-spacing: 0.6em;
 }
 
 .nav-toggle {
@@ -235,8 +247,10 @@ body.nav-open::after {
   padding: 0.8rem 0;
   color: var(--ivory-mute);
   text-decoration: none;
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .site-nav a:hover,
@@ -259,14 +273,25 @@ body.nav-open::after {
   max-width: 46rem;
 }
 
+.hero-logo {
+  display: block;
+  width: clamp(11rem, 30vw, 17rem);
+  height: auto;
+}
+
 .hero-title,
 .hero h1 {
   margin: 0;
-  font-size: clamp(1.55rem, 3.4vw, 2.15rem);
-  font-weight: 400;
-  line-height: 1.35;
-  letter-spacing: -0.02em;
+  font-size: clamp(1.35rem, 3vw, 1.95rem);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0;
   color: var(--ivory);
+}
+
+.hero-line {
+  font-weight: 400;
+  color: var(--soft-grey);
 }
 
 .hero-line {
@@ -281,6 +306,7 @@ body.nav-open::after {
   color: var(--ivory-mute);
   text-decoration: none;
   font-size: 0.72rem;
+  font-weight: 500;
   letter-spacing: 0.28em;
   text-transform: uppercase;
 }
@@ -292,7 +318,7 @@ body.nav-open::after {
 
 .hero-link:hover,
 .hero-link:focus-visible {
-  color: var(--ivory);
+  color: var(--accent);
 }
 
 .hero-actions {
@@ -315,22 +341,37 @@ body.nav-open::after {
   padding-bottom: var(--section);
 }
 
+/* Titres de section : Montserrat Bold, capitales, comme les titres de la charte
+   (« 01 — BRAND DNA »), précédés du pictogramme de la charte. */
 .section h2 {
   margin: 0;
-  font-size: clamp(3.6rem, 11vw, 8.5rem);
-  font-weight: 400;
-  line-height: 0.92;
-  letter-spacing: -0.045em;
+  font-size: clamp(2.1rem, 7.4vw, 5.25rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
   color: var(--ivory);
+}
+
+.section h2::before {
+  content: "";
+  display: block;
+  width: 2.1rem;
+  height: 1.8rem;
+  margin-bottom: 1.1rem;
+  background-color: var(--off-white);
+  -webkit-mask: url("/brand/k3ch-picto.svg") left center / contain no-repeat;
+  mask: url("/brand/k3ch-picto.svg") left center / contain no-repeat;
 }
 
 .lede,
 .manifesto {
   margin: clamp(1.75rem, 4vw, 3rem) 0 0;
   max-width: 38rem;
-  font-size: clamp(1.35rem, 2.4vw, 2rem);
-  line-height: 1.35;
-  letter-spacing: -0.02em;
+  font-size: clamp(1.25rem, 2.2vw, 1.8rem);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: 0;
   color: var(--ivory);
 }
 
@@ -355,7 +396,7 @@ body.nav-open::after {
 }
 
 .section-header.compact h2 {
-  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  font-size: clamp(1.9rem, 6vw, 3.75rem);
 }
 
 .works-grid,
@@ -381,30 +422,24 @@ body.nav-open::after {
   min-height: 16.5rem;
   padding: 1.35rem 1.4rem;
   border: 1px solid var(--line);
-  background:
-    radial-gradient(ellipse at 80% 0%, rgb(187 199 161 / 0.08), transparent 46%),
-    var(--surface);
-}
-
-.work-card[data-work="media"] {
-  border-color: rgb(61 94 255 / 0.32);
-  background:
-    radial-gradient(ellipse at 80% 0%, rgb(61 94 255 / 0.12), transparent 48%),
-    var(--surface);
+  background: var(--charte-gradient);
 }
 
 .work-label {
   margin: 0;
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
   color: var(--ivory-dim);
 }
 
 .work-line {
   margin: 0.35rem 0 0;
-  font-size: clamp(1.55rem, 3vw, 2.1rem);
-  line-height: 1.15;
-  letter-spacing: -0.03em;
+  font-size: clamp(1.45rem, 2.8vw, 1.95rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0;
   color: var(--ivory);
 }
 
@@ -435,7 +470,7 @@ body.nav-open::after {
 .piece-frame {
   position: relative;
   overflow: hidden;
-  background: #050505;
+  background: var(--black);
 }
 
 .piece-featured .piece-frame {
@@ -471,20 +506,17 @@ body.nav-open::after {
 .piece-kicker {
   margin: 0;
   font-size: 0.72rem;
+  font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--ivory-dim);
 }
 
-.piece[data-accent="media"] .piece-kicker {
-  color: var(--media-blue);
-}
-
 .piece h3 {
   margin: 0.28rem 0 0;
-  font-size: clamp(1.35rem, 2.5vw, 1.85rem);
-  font-weight: 400;
-  letter-spacing: -0.03em;
+  font-size: clamp(1.25rem, 2.3vw, 1.65rem);
+  font-weight: 600;
+  letter-spacing: 0;
   color: var(--ivory);
 }
 
@@ -531,7 +563,7 @@ body.nav-open::after {
   align-items: end;
   min-height: clamp(18rem, 46vh, 30rem);
   padding: 2.25rem 1.1rem 1.35rem;
-  background: #000;
+  background: var(--black);
 }
 
 .step-visual.has-lockup::before {
@@ -539,8 +571,8 @@ body.nav-open::after {
 }
 
 .step-lockup {
-  width: min(32rem, 88%);
-  max-height: 22rem;
+  width: min(18rem, 70%);
+  max-height: 16rem;
   height: auto;
   object-fit: contain;
   justify-self: center;
@@ -552,7 +584,7 @@ body.nav-open::after {
   max-width: 24ch;
   font-size: clamp(1.05rem, 2.2vw, 1.4rem);
   line-height: 1.3;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   color: var(--ivory);
 }
 
@@ -577,9 +609,9 @@ body.nav-open::after {
 
 .step h3 {
   margin: 0 0 0.9rem;
-  font-size: clamp(1.55rem, 2.6vw, 2.05rem);
-  font-weight: 400;
-  letter-spacing: -0.03em;
+  font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+  font-weight: 600;
+  letter-spacing: 0;
   color: var(--ivory);
 }
 
@@ -594,9 +626,10 @@ body.nav-open::after {
   width: 4.4rem;
   height: 4.4rem;
   margin: 0.15rem 0 0;
-  border: 1px solid rgb(242 240 235 / 0.55);
+  border: 1px solid var(--line-strong);
   border-radius: 50%;
   font-size: 1.15rem;
+  font-weight: 300;
   color: var(--ivory);
 }
 
@@ -608,7 +641,7 @@ body.nav-open::after {
   margin-top: clamp(2.25rem, 6vw, 4.25rem);
   padding: 1.5rem 0.2rem;
   overflow: hidden;
-  background: var(--surface);
+  background: var(--charte-gradient);
 }
 
 .step-visual::before {
@@ -625,7 +658,7 @@ body.nav-open::after {
   left: 62%;
   width: min(18rem, 46%);
   height: min(18rem, 72%);
-  border: 1px solid rgb(242 240 235 / 0.22);
+  border: 1px solid var(--line);
   border-radius: 50%;
   transform: translate(-50%, -50%);
 }
@@ -635,17 +668,17 @@ body.nav-open::after {
     to bottom,
     transparent 0,
     transparent 18px,
-    rgb(242 240 235 / 0.16) 18px,
-    rgb(242 240 235 / 0.16) 19px
+    var(--line) 18px,
+    var(--line) 19px
   );
 }
 
 .step-visual[data-motif="media"]::before {
   inset: 22% 18%;
   box-shadow:
-    0 0 0 1px rgb(242 240 235 / 0.18),
+    0 0 0 1px var(--line),
     1.5rem 1.5rem 0 -1px var(--bg),
-    1.5rem 1.5rem 0 0 rgb(242 240 235 / 0.16);
+    1.5rem 1.5rem 0 0 var(--line);
 }
 
 .step-aside {
@@ -653,10 +686,10 @@ body.nav-open::after {
   z-index: 1;
   margin: 0;
   max-width: 18ch;
-  font-size: clamp(1.8rem, 6vw, 4.4rem);
-  font-weight: 400;
-  line-height: 1.05;
-  letter-spacing: -0.035em;
+  font-size: clamp(1.6rem, 5.2vw, 3.6rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 0;
   color: var(--ivory);
 }
 
@@ -668,14 +701,15 @@ body.nav-open::after {
 .parcours-number {
   margin: 0 0 0.65rem;
   font-size: 0.8rem;
+  font-weight: 300;
   color: var(--copper);
 }
 
 .parcours-list h3 {
   margin: 0 0 0.4rem;
-  font-size: 1.45rem;
-  font-weight: 400;
-  letter-spacing: -0.03em;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0;
   color: var(--ivory);
 }
 
@@ -687,6 +721,7 @@ body.nav-open::after {
 .offre-kicker {
   margin: 0 0 0.85rem;
   font-size: 0.72rem;
+  font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--copper);
@@ -711,11 +746,24 @@ body.nav-open::after {
   margin-bottom: clamp(2.5rem, 6vw, 4rem);
 }
 
+/* Puces carrées « ▪ » comme les libellés de la charte (« ▪ LOGO PRINCIPAL »). */
 .prestation-list li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   font-size: 0.78rem;
+  font-weight: 400;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--ivory-dim);
+}
+
+.prestation-list li::before {
+  content: "";
+  flex: none;
+  width: 0.32rem;
+  height: 0.32rem;
+  background: var(--off-white);
 }
 
 .pack-grid {
@@ -728,22 +776,18 @@ body.nav-open::after {
   flex-direction: column;
   padding: 1.5rem 1.45rem 1.55rem;
   border: 1px solid var(--line);
-  background:
-    radial-gradient(ellipse at 80% 0%, rgb(187 199 161 / 0.08), transparent 46%),
-    var(--surface);
+  background: var(--charte-gradient);
 }
 
 .pack-card.is-phare {
   order: -1;
-  border-color: rgb(187 199 161 / 0.42);
-  background:
-    radial-gradient(ellipse at 80% 0%, rgb(187 199 161 / 0.16), transparent 48%),
-    var(--surface);
+  border-color: var(--accent);
 }
 
 .pack-kicker {
   margin: 0;
   font-size: 0.72rem;
+  font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--ivory-dim);
@@ -755,17 +799,17 @@ body.nav-open::after {
 
 .pack-card h3 {
   margin: 0.4rem 0 0;
-  font-size: clamp(1.45rem, 2.6vw, 1.9rem);
-  font-weight: 400;
-  letter-spacing: -0.03em;
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  font-weight: 600;
+  letter-spacing: 0;
   color: var(--ivory);
 }
 
 .pack-price {
   margin: 1.15rem 0 0;
-  font-size: clamp(1.7rem, 3.4vw, 2.35rem);
-  font-weight: 400;
-  letter-spacing: -0.03em;
+  font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+  font-weight: 300;
+  letter-spacing: 0;
   color: var(--ivory);
 }
 
@@ -784,9 +828,10 @@ body.nav-open::after {
 
 .tarif-group h3 {
   margin: 0 0 1.1rem;
-  font-size: 1.45rem;
-  font-weight: 400;
-  letter-spacing: -0.03em;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
   color: var(--ivory);
 }
 
@@ -812,7 +857,8 @@ body.nav-open::after {
 
 .tarif-price {
   color: var(--ivory);
-  letter-spacing: -0.02em;
+  font-weight: 500;
+  letter-spacing: 0;
   text-align: right;
   white-space: nowrap;
 }
@@ -843,12 +889,14 @@ body.nav-open::after {
   gap: 0.45rem;
   width: fit-content;
   padding: 0.95rem 1.45rem;
-  border: 1px solid rgb(242 240 235 / 0.55);
+  border: 1px solid var(--off-white);
   color: var(--ivory);
   text-decoration: none;
   font-size: 0.72rem;
+  font-weight: 600;
   letter-spacing: 0.28em;
   text-transform: uppercase;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .offre-cta [aria-hidden="true"] {
@@ -858,10 +906,13 @@ body.nav-open::after {
 
 .offre-cta:hover,
 .offre-cta:focus-visible {
-  border-color: var(--copper);
-  color: var(--copper);
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--obsidian);
 }
 
+/* Dondolie = sous-marque merch. Seule exception à la palette K3CH :
+   l'or de son emblème (validé), limité à cette section (emblème + surtitre). */
 .dondolie {
   --dondolie-gold: #d4af4a;
 }
@@ -876,9 +927,8 @@ body.nav-open::after {
   margin: 0;
   display: grid;
   place-items: center;
-  background:
-    radial-gradient(ellipse at 50% 46%, rgb(212 175 74 / 0.12), transparent 58%),
-    #000;
+  border: 1px solid var(--graphite);
+  background: var(--black);
 }
 
 .dondolie-emblem img {
@@ -894,13 +944,35 @@ body.nav-open::after {
 .dondolie-kicker {
   margin: 0 0 0.65rem;
   font-size: 0.78rem;
+  font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--dondolie-gold);
 }
 
 .dondolie h2 {
-  font-size: clamp(2.8rem, 8vw, 5.75rem);
+  font-size: clamp(2.2rem, 7vw, 4.5rem);
+}
+
+/* Offre : le pictogramme passe au-dessus du surtitre « Studio ». */
+.offre h2::before {
+  content: none;
+}
+
+.offre .offre-kicker::before {
+  content: "";
+  display: block;
+  width: 2.1rem;
+  height: 1.8rem;
+  margin-bottom: 1.1rem;
+  background-color: var(--off-white);
+  -webkit-mask: url("/brand/k3ch-picto.svg") left center / contain no-repeat;
+  mask: url("/brand/k3ch-picto.svg") left center / contain no-repeat;
+}
+
+/* Le pictogramme K3CH ne signe pas la sous-marque Dondolie. */
+.dondolie h2::before {
+  content: none;
 }
 
 .dondolie .prose {
@@ -912,8 +984,7 @@ body.nav-open::after {
 }
 
 .contact h2 {
-  font-size: clamp(1.7rem, 3vw, 2.2rem);
-  letter-spacing: -0.03em;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
 }
 
 .contact-inner {
@@ -942,6 +1013,7 @@ body.nav-open::after {
 
 .contact-label {
   font-size: 0.72rem;
+  font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--ivory-dim);
@@ -972,11 +1044,12 @@ body.nav-open::after {
   place-items: center;
   width: 6.5rem;
   height: 6.5rem;
-  border: 1px solid rgb(242 240 235 / 0.45);
+  border: 1px solid var(--line-strong);
   border-radius: 50%;
   color: var(--ivory);
   text-decoration: none;
   font-size: 0.82rem;
+  font-weight: 500;
 }
 
 .contact-orbs a:hover,
@@ -993,8 +1066,16 @@ body.nav-open::after {
   display: grid;
   gap: 0.3rem;
   padding-top: 1.4rem;
+  border-top: 1px solid var(--line);
   font-size: 0.8rem;
   color: var(--ivory-dim);
+}
+
+.footer-logo {
+  display: block;
+  width: auto;
+  height: 2rem;
+  margin-bottom: 1rem;
 }
 
 .footer-inner p {
@@ -1033,7 +1114,7 @@ body.nav-open::after {
 
   .site-nav a {
     padding: 0.25rem 0;
-    font-size: 0.82rem;
+    font-size: 0.7rem;
   }
 
   .pieces-grid {
@@ -1116,19 +1197,23 @@ body.nav-open::after {
     grid-template-columns: 1fr auto;
     align-items: baseline;
   }
+
+  .footer-logo {
+    grid-column: 1 / -1;
+  }
 }
 
 @media (min-width: 1100px) {
   .hero h1 {
-    font-size: 2.25rem;
+    font-size: 2.05rem;
   }
 
   .site-nav ul {
-    gap: 1.2rem;
+    gap: 1.35rem;
   }
 
   .site-nav a {
-    font-size: 0.88rem;
+    font-size: 0.72rem;
   }
 
   .step-aside {
@@ -1143,3 +1228,13 @@ body.nav-open::after {
   letter-spacing: 0.08em;
   color: var(--copper);
 }
+
+/* Style photo de la charte (planche 01) : noir et blanc, contrasté.
+   Appliqué aux photos de la maison (studio, équipe, atelier) ;
+   les visuels clients (LOST ERA) restent tels que livrés. */
+.studio-pieces .piece-frame img,
+.equipe-frame img,
+.atelier-atmosphere img {
+  filter: grayscale(1) contrast(1.06);
+}
+
