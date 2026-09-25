@@ -87,7 +87,7 @@ Les visuels publics sont dans `public/` (et `public/works/`). Chemins et légend
 | `public/works/spotlight-papers.jpg` | Atmosphère Atelier / Création |
 | `public/equipe-k3ch.jpg` | Section Équipe |
 | `public/k3ch-media-lockup.jpg` | Bloc Media (atelier) |
-| `public/dondolie-emblem.jpg` | Emblème Dondolie (teaser merch) |
+| `public/dondolie-emblem.png` | Emblème Dondolie (teaser merch) |
 
 Ne pas inventer de noms de clients au-delà de ce qui figure sur les visuels (LOST ERA, PSYCONCE).
 
@@ -103,7 +103,7 @@ export const features = {
 
 Passer `dondolieTeaser` à `false` pour retirer la section et le lien de navigation.
 
-Les textes du teaser se trouvent dans `copy.dondolieTitle` et `copy.dondolieText`. L’emblème (`public/dondolie-emblem.jpg`) est branché via `copy.dondolieEmblem` et s’affiche en visuel principal de la section.
+Les textes du teaser se trouvent dans `copy.dondolieTitle` et `copy.dondolieText`. L’emblème (`public/dondolie-emblem.png`) est branché via `copy.dondolieEmblem` et s’affiche en visuel principal de la section.
 
 ## Publication (GitHub Pages)
 
@@ -143,7 +143,7 @@ public/favicon.svg
 public/logo.png
 public/equipe-k3ch.jpg
 public/k3ch-media-lockup.jpg
-public/dondolie-emblem.jpg
+public/dondolie-emblem.png
 public/works/lost-era-duo.jpg
 public/works/lost-era-psyconce.jpg
 public/works/spotlight-papers.jpg
