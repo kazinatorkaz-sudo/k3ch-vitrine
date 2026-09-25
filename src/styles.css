@@ -995,6 +995,8 @@ body.nav-open::after {
   display: block;
   width: min(34rem, 100%);
   height: auto;
+  /* Emblème détouré au plus près : marge intérieure pour qu'il respire dans le cadre. */
+  padding: clamp(1.75rem, 5vw, 3.25rem);
 }
 
 .dondolie-copy {
