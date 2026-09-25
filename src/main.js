@@ -1,6 +1,7 @@
 import "./styles.css";
 import { copy } from "./config.js";
 import { loadTarifs } from "./tarifs.js";
+import { renderLabel } from "./label.js";
 
 document.documentElement.classList.add("js");
 
@@ -70,6 +71,7 @@ function setupReveal() {
 }
 
 applyVisuals();
+renderLabel(document.querySelector("[data-label-list]"));
 setupNavigation();
 setupReveal();
 loadTarifs(document.querySelector("[data-tarifs]"));
