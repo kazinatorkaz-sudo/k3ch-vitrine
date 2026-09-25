@@ -18,8 +18,12 @@ Les logos et le pictogramme ont été extraits **en vectoriel** depuis le PDF (p
 | **Logo** : principal (arbre + K3CH + MUSIC & MEDIA), horizontal, emblème seul, emblème + K3CH ; blanc sur fond noir | En-tête et pied de page : logo horizontal ; hero et bloc Media de l'atelier : logo principal ; favicon : emblème Off White sur #0B0B0B. Logos non recolorés, non déformés, sur fond noir. |
 | **Style photo** (planche 01) : noir et blanc, contrasté | Photos de la maison (studio, équipe, atelier) en noir et blanc via CSS (`grayscale(1) contrast(1.06)`) ; fichiers d'origine inchangés. |
 
-## Exception : Dondolie
-Dondolie est une sous-marque (merch) avec son propre emblème or validé (`public/dondolie-emblem.png`, non modifié). L'or `#d4af4a` reste **cantonné à la section Dondolie** (emblème + surtitre « Merch »). Le cadre suit la charte K3CH : fond Deep Black, filet Graphite, titre Montserrat Bold capitales ; le halo doré de fond a été retiré, et le pictogramme K3CH n'y est pas apposé.
+## Exception Dondolie
+Dondolie est une sous-marque (merch) avec sa propre charte (`dondolie logo.pdf`). Elle s'applique **uniquement à la section `#dondolie`** ; le reste du site suit la charte K3CH ci-dessus.
+- **Palette** (valeurs relevées sur la charte) : navy `#1D1F2C` (fond de section, cadre de l'emblème) et sable `#C9B087` (logotype, surtitre, textes, filets en transparence). Variables CSS `--dondolie-navy`, `--dondolie-sand` limitées à `.dondolie`.
+- **Logotype** : « dondolie » en minuscules, sans-serif géométrique arrondie et grasse → **M PLUS Rounded 1c ExtraBold (800)**, tracking −0.03em, chargée pour ce seul mot (`&text=dondolie`). Surtitre « Merch » et textes courants restent en Montserrat, couleur sable.
+- **Emblème** : `public/dondolie-emblem.png`, emblème or brillant détouré (PNG transparent 1400 × 1400, ombre portée retirée), posé sur le panneau navy. Histoire du logo rappelée en légende : « Fourmi + peace & love + cœur. »
+- Le pictogramme K3CH n'est pas apposé sur cette section.
 
 ## Points où la charte est muette ou ambiguë (choix faits)
 - **Zone de protection, taille minimale, interdits du logo** : absents. Choix : marges généreuses, pas de recoloration ni de déformation, logo horizontal ≥ 2 rem de haut.
