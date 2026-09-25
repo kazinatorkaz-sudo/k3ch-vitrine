@@ -28,7 +28,7 @@ export const copy = {
     "K3CH réunit le studio, la musique et les médias à Alger. Image nette, son juste, récit qui reste.",
   ],
   worksNote: "",
-  worksTitle: "Réalisations",
+  worksTitle: "Collaborations",
   worksIntro: "Studio & media — la maison en images.",
   works: [
     {
