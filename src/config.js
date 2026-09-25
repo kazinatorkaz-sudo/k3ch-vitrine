@@ -175,7 +175,7 @@ export const copy = {
     kicker: "Studio",
     title: "Offre",
     lede: "On livre le titre, pas juste l’heure.",
-    intro: "Cabine, mix, master — forfaits en dinars, Alger.",
+    intro: "Cabine, mix, master — Alger.",
     prestationsTitle: "Prestations",
     prestations: [
       { id: "recording", title: "Recording" },
