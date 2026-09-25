@@ -104,7 +104,7 @@ export function render(root, groups, source) {
   packsHost.replaceChildren();
   listHost.replaceChildren();
   for (const g of groups) {
-    if (/pack/i.test(g.title)) {
+    if (/pack|formule/i.test(g.title)) {
       for (const it of g.items) {
         const li = el("li", `pack-card${it.flag === "phare" ? " is-phare" : ""}`);
         li.dataset.pack = it.code;

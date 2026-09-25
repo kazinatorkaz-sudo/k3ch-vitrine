@@ -49,7 +49,7 @@ https://docs.google.com/spreadsheets/d/19cBflhTpPGH1C6e2ZNZ5e4VIByuqNV8YbUCaWu1Y
 
 Onglet `Tarifs`, colonnes : `categorie`, `code`, `prestation`, `prix_DA`, `unite/note`, `actif` (OUI/NON), `ordre`. L'onglet `Mode d'emploi` explique tout (changer un prix, masquer une ligne, ajouter une ligne).
 
-Le site lit le Sheet **à chaque visite** (`src/tarifs.js`, point d'accès CSV `gviz/tq?tqx=out:csv&sheet=Tarifs`) : il masque les lignes `actif = NON`, regroupe par `categorie`, trie par `ordre` et affiche « 12 000 DA ». Les catégories dont le nom contient « Pack » s'affichent en cartes. Mots-clés en début de `unite/note` : `Phare ·` (carte mise en avant), `Option ·` (« + 2 500 DA »), `Dès ·` (« dès 8 000 DA »).
+Le site lit le Sheet **à chaque visite** (`src/tarifs.js`, point d'accès CSV `gviz/tq?tqx=out:csv&sheet=Tarifs`) : il masque les lignes `actif = NON`, regroupe par `categorie`, trie par `ordre` et affiche « 12 000 DA ». Les catégories dont le nom contient « Pack » ou « Formule » s'affichent en cartes. Mots-clés en début de `unite/note` : `Phare ·` (carte mise en avant), `Option ·` (« + 2 500 DA »), `Dès ·` (« dès 8 000 DA »).
 
 ### ⚠️ À faire une fois : autoriser le site à lire le Sheet
 

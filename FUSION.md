@@ -32,6 +32,6 @@ La version **la plus récente** donne la direction (structure, design, contenu) 
 
 ## Nouveau
 - Tarifs chargés à l'exécution depuis le Google Sheet « K3CH — Tarifs (source unique) », copie de secours `src/tarifs.json`, colonne `actif` pour masquer une ligne.
-- Grille = proposition Maison du 25/09 (plancher 5 000 DA ; Freestyle et VO Express 3 500 retirés).
+- Grille = grille Maison du 25/09 (4 rubriques, 20 lignes : Formules, Enregistrement, Mix/master/production, Voix-off & pub ; plancher 3 500 DA avec Freestyle et VO Express).
 - Charte graphique appliquée (couleurs, Montserrat, favicon).
 - 25/09 (après-midi) : mise en conformité complète avec la charte de marque (`Charte Grafique.pdf`) : logos vectoriels officiels, palette stricte, hiérarchie typographique, style photo N&B. Détail des règles : **CHARTE.md**.

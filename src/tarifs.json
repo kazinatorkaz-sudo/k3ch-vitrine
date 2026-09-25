@@ -1,48 +1,39 @@
 [
   {
-    "categorie": "Packs titre",
+    "categorie": "Formules",
     "code": "premiere",
     "prestation": "Première session",
     "prix_DA": 5000,
-    "unite/note": "Une fois par artiste · 1 session · prix plancher",
+    "unite/note": "1 h cabine + ingé son · une seule fois, pour découvrir le studio · sans mix",
     "actif": "OUI",
     "ordre": 10
   },
   {
-    "categorie": "Packs titre",
-    "code": "decouverte",
-    "prestation": "Découverte · rec + premix",
-    "prix_DA": 8000,
-    "unite/note": "Dès la 2ᵉ venue · 1 titre · 1 h 30 de rec · premix cabine",
+    "categorie": "Formules",
+    "code": "pack-titre",
+    "prestation": "Pack titre fini",
+    "prix_DA": 10000,
+    "unite/note": "Phare · 2 h d'enregistrement + mix + master · un titre livré",
     "actif": "OUI",
     "ordre": 20
   },
   {
-    "categorie": "Packs titre",
-    "code": "pack-titre",
-    "prestation": "Pack titre fini",
-    "prix_DA": 10000,
-    "unite/note": "Phare · rec + mix cabine soigné + master simple · 2 révisions · WAV + MP3",
+    "categorie": "Formules",
+    "code": "pack-3",
+    "prestation": "Pack 3 titres",
+    "prix_DA": 26000,
+    "unite/note": "3 × (2 h d'enregistrement + mix + master) · 3 titres livrés",
     "actif": "OUI",
     "ordre": 30
   },
   {
-    "categorie": "Packs titre",
-    "code": "pack-premium",
-    "prestation": "Pack Premium fini",
-    "prix_DA": 14000,
-    "unite/note": "Titre fini + stems · 2 révisions",
+    "categorie": "Enregistrement",
+    "code": "freestyle",
+    "prestation": "Freestyle / session courte",
+    "prix_DA": 3500,
+    "unite/note": "30 min cabine + ingé son · sans mix",
     "actif": "OUI",
-    "ordre": 40
-  },
-  {
-    "categorie": "Packs titre",
-    "code": "pack-3",
-    "prestation": "Pack 3 titres fini",
-    "prix_DA": 26000,
-    "unite/note": "3 titres finis · 50 % à la commande, solde au 3ᵉ titre",
-    "actif": "OUI",
-    "ordre": 50
+    "ordre": 110
   },
   {
     "categorie": "Enregistrement",
@@ -51,49 +42,49 @@
     "prix_DA": 6000,
     "unite/note": "Cabine + ingé son · sans mix",
     "actif": "OUI",
-    "ordre": 110
+    "ordre": 120
   },
   {
     "categorie": "Enregistrement",
     "code": "rec-2h",
     "prestation": "Enregistrement 2 h",
-    "prix_DA": 11000,
+    "prix_DA": 8000,
     "unite/note": "Cabine + ingé son · sans mix",
-    "actif": "OUI",
-    "ordre": 120
-  },
-  {
-    "categorie": "Enregistrement",
-    "code": "rec-4h",
-    "prestation": "Enregistrement 4 h · demi-journée",
-    "prix_DA": 18000,
-    "unite/note": "Pause comprise · sans mix",
     "actif": "OUI",
     "ordre": 130
   },
   {
     "categorie": "Enregistrement",
-    "code": "rec-journee",
-    "prestation": "Journée 8 h",
-    "prix_DA": 32000,
-    "unite/note": "Créneau 10 h – 20 h · sans mix",
+    "code": "rec-4h",
+    "prestation": "Enregistrement 4 h · demi-journée",
+    "prix_DA": 12000,
+    "unite/note": "Pause comprise · sans mix",
     "actif": "OUI",
     "ordre": 140
+  },
+  {
+    "categorie": "Enregistrement",
+    "code": "rec-journee",
+    "prestation": "Journée 8 h",
+    "prix_DA": 20000,
+    "unite/note": "Créneau 10 h – 20 h · sans mix",
+    "actif": "OUI",
+    "ordre": 150
   },
   {
     "categorie": "Enregistrement",
     "code": "heure-sup",
     "prestation": "Heure supplémentaire",
     "prix_DA": 2500,
-    "unite/note": "Option · par heure entamée · prolongation d'une session uniquement",
+    "unite/note": "Option · Par heure entamée · prolongation d'une session uniquement",
     "actif": "OUI",
-    "ordre": 150
+    "ordre": 160
   },
   {
     "categorie": "Mix, master & production",
     "code": "mix",
     "prestation": "Mixage soigné",
-    "prix_DA": 14000,
+    "prix_DA": 5000,
     "unite/note": "Par titre",
     "actif": "OUI",
     "ordre": 210
@@ -102,7 +93,7 @@
     "categorie": "Mix, master & production",
     "code": "master",
     "prestation": "Mastering",
-    "prix_DA": 8000,
+    "prix_DA": 3000,
     "unite/note": "Par titre",
     "actif": "OUI",
     "ordre": 220
@@ -111,7 +102,7 @@
     "categorie": "Mix, master & production",
     "code": "mix-master",
     "prestation": "Mix + master (sans rec)",
-    "prix_DA": 18000,
+    "prix_DA": 7000,
     "unite/note": "Par titre",
     "actif": "OUI",
     "ordre": 230
@@ -130,7 +121,7 @@
     "code": "arrangement",
     "prestation": "Arrangement / production",
     "prix_DA": 8000,
-    "unite/note": "Dès · devis au-delà de 4 h",
+    "unite/note": "Dès · Devis au-delà de 4 h",
     "actif": "OUI",
     "ordre": 250
   },
@@ -138,45 +129,54 @@
     "categorie": "Mix, master & production",
     "code": "autotune",
     "prestation": "Auto-Tune / correction",
-    "prix_DA": 4000,
-    "unite/note": "Option · ajoutée à une session ou un pack, jamais vendue seule",
+    "prix_DA": 2000,
+    "unite/note": "Option · Ajoutée à une session ou un pack, jamais vendue seule",
     "actif": "OUI",
     "ordre": 260
   },
   {
     "categorie": "Voix-off & pub",
-    "code": "vo-heure",
-    "prestation": "Voix-off · heure cabine",
-    "prix_DA": 5000,
-    "unite/note": "Prise seule",
+    "code": "vo-express",
+    "prestation": "VO Express · 15 min",
+    "prix_DA": 3500,
+    "unite/note": "Prise + nettoyage · texte court",
     "actif": "OUI",
     "ordre": 310
   },
   {
     "categorie": "Voix-off & pub",
-    "code": "vo-30",
-    "prestation": "Voix-off standard · 30 min",
-    "prix_DA": 6000,
-    "unite/note": "Prise + nettoyage + traitement",
+    "code": "vo-heure",
+    "prestation": "Voix-off · heure cabine",
+    "prix_DA": 7000,
+    "unite/note": "Prise seule · direction de voix incluse",
     "actif": "OUI",
     "ordre": 320
   },
   {
     "categorie": "Voix-off & pub",
-    "code": "pub",
-    "prestation": "Pub / spot",
-    "prix_DA": 8000,
-    "unite/note": "Session dédiée + master spot · devis si brief lourd",
+    "code": "vo-30",
+    "prestation": "Voix-off standard · 30 min",
+    "prix_DA": 9000,
+    "unite/note": "Prise + nettoyage + traitement",
     "actif": "OUI",
     "ordre": 330
   },
   {
     "categorie": "Voix-off & pub",
-    "code": "vo-premium",
-    "prestation": "Voix-off premium · 60 min",
-    "prix_DA": 9000,
-    "unite/note": "Jusqu'à 60 min de session",
+    "code": "pub",
+    "prestation": "Pub / spot",
+    "prix_DA": 15000,
+    "unite/note": "Session dédiée + master spot · devis si brief lourd",
     "actif": "OUI",
     "ordre": 340
+  },
+  {
+    "categorie": "Voix-off & pub",
+    "code": "vo-premium",
+    "prestation": "Voix-off premium · 60 min",
+    "prix_DA": 15000,
+    "unite/note": "Jusqu'à 60 min · prise + nettoyage + traitement",
+    "actif": "OUI",
+    "ordre": 350
   }
 ]
