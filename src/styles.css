@@ -402,8 +402,7 @@ body.nav-open::after {
 .works-grid,
 .step-list,
 .parcours-list,
-.contact-list,
-.contact-orbs {
+.contact-list {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -1080,26 +1079,25 @@ body.nav-open::after {
   gap: 2.5rem;
 }
 
-.contact-fallback,
 .contact-list {
+  display: grid;
+  gap: 0.45rem;
   margin-top: 1.1rem;
   max-width: var(--measure);
 }
 
-.contact-list {
-  display: grid;
-  gap: 0.45rem;
-}
-
 .contact-link {
   display: grid;
-  gap: 0.22rem;
+  gap: 0.3rem;
   width: fit-content;
+  min-height: 44px;
+  padding: 0.35rem 0;
   color: var(--ivory);
   text-decoration: none;
 }
 
 .contact-label {
+  margin: 0;
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.16em;
@@ -1108,42 +1106,59 @@ body.nav-open::after {
 }
 
 .contact-value {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+  font-weight: 500;
+  letter-spacing: 0.04em;
   color: inherit;
 }
 
-.contact-list a:hover,
-.contact-list a:focus-visible {
-  color: var(--copper);
+.contact-icon {
+  flex: none;
+  width: 1.15rem;
+  height: 1.15rem;
 }
 
+.contact-list a:hover,
+.contact-list a:focus-visible,
 .contact-list a:hover .contact-label,
 .contact-list a:focus-visible .contact-label {
-  color: var(--copper);
+  color: var(--accent);
 }
 
-.contact-orbs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.85rem;
-}
-
-.contact-orbs a {
+.contact-socials {
   display: grid;
-  place-items: center;
-  width: 6.5rem;
-  height: 6.5rem;
-  border: 1px solid var(--line-strong);
-  border-radius: 50%;
+  gap: 0.15rem;
+  margin: 0.6rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 44px;
+  padding: 0 0.1rem;
   color: var(--ivory);
   text-decoration: none;
-  font-size: 0.82rem;
+  font-size: 0.98rem;
   font-weight: 500;
+  letter-spacing: 0.03em;
+  transition: color 0.2s ease;
 }
 
-.contact-orbs a:hover,
-.contact-orbs a:focus-visible {
-  border-color: var(--copper);
-  color: var(--copper);
+.contact-social:hover,
+.contact-social:focus-visible {
+  color: var(--accent);
+}
+
+.contact-link:focus-visible,
+.contact-social:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 4px;
 }
 
 .site-footer {

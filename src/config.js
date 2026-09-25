@@ -199,20 +199,25 @@ export const copy = {
     height: 1400,
   },
   contactTitle: "Contactez-nous",
-  contactFallback: "Les coordonnées seront publiées ici.",
   footerRights: "Tous droits réservés.",
 };
 
 /**
- * Contacts publics uniquement. Chaînes vides = non affichées.
- * WhatsApp : afficher le numéro national tel que fourni.
- * Le lien wa.me utilise la forme internationale (DZ : 05… → 213…).
+ * Contacts publics (affichés en dur dans la section #contact d'index.html :
+ * garder les deux en phase). Chaînes vides = non affichées.
+ * WhatsApp : numéro national tel que fourni ; le lien wa.me utilise la forme
+ * internationale (DZ : 05… → 213…). Il sert au bouton « Réserver » (#offre).
  */
 export const contact = {
   email: "",
-  phone: "",
+  phone: { display: "05 59 77 10 74", tel: "+213559771074" },
   whatsapp: "05 59 77 10 74",
-  instagram: "",
+  instagram: [
+    { handle: "k3chmusic", url: "https://www.instagram.com/k3chmusic/" },
+    { handle: "k3chstudio", url: "https://www.instagram.com/k3chstudio/" },
+    { handle: "k3ch.vision", url: "https://www.instagram.com/k3ch.vision/" },
+    { handle: "k3ch.media", url: "https://www.instagram.com/k3ch.media/" },
+  ],
   youtube: "",
   site: "",
 };
