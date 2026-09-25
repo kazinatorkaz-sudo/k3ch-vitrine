@@ -227,7 +227,7 @@ export const features = {
  * Sinon (ou hors ligne), le site affiche la copie intégrée src/tarifs.json.
  */
 export const tarifs = {
-  sheetId: "1ZXS_fkVi8h8vj8SAdhJUB0GM2IFFVdhBLpHDFhgNQ8k",
+  sheetId: "19cBflhTpPGH1C6e2ZNZ5e4VIByuqNV8YbUCaWu1YbX0",
   sheetName: "Tarifs",
   timeoutMs: 6000,
 };

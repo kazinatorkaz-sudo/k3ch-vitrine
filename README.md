@@ -45,7 +45,7 @@ Ne jamais y placer de finances internes, d’accès opérationnels ou d’inform
 ## Tarifs — modifiables à tout moment, sans toucher au code
 
 **Source unique : le Google Sheet « K3CH — Tarifs (source unique) »**
-https://docs.google.com/spreadsheets/d/1ZXS_fkVi8h8vj8SAdhJUB0GM2IFFVdhBLpHDFhgNQ8k/edit
+https://docs.google.com/spreadsheets/d/19cBflhTpPGH1C6e2ZNZ5e4VIByuqNV8YbUCaWu1YbX0/edit
 
 Onglet `Tarifs`, colonnes : `categorie`, `code`, `prestation`, `prix_DA`, `unite/note`, `actif` (OUI/NON), `ordre`. L'onglet `Mode d'emploi` explique tout (changer un prix, masquer une ligne, ajouter une ligne).
 
