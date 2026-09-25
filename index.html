@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Maison de création à Alger. Studio, Music, Media — cabine, mix, master. On livre le titre, pas juste l’heure."
+    />
+    <meta name="theme-color" content="#0B0B0B" />
+    <title>Maison K3CH Production — Alger</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand-mark" href="#accueil">
+          <img
+            class="nav-logo"
+            data-bind="logo"
+            src="./logo.png"
+            width="497"
+            height="603"
+            alt="Maison K3CH Production"
+          />
+          <span class="brand-lockup" data-lockup data-bind="lockup" hidden>K3CH</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          data-nav-toggle
+          aria-controls="navigation"
+          aria-expanded="false"
+        >
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+          <span class="visually-hidden">Ouvrir le menu</span>
+        </button>
+
+        <nav id="navigation" class="site-nav" data-nav-panel data-open="false" aria-label="Navigation principale">
+          <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#maison">Maison</a></li>
+            <li><a href="#offre">Offre</a></li>
+            <li><a href="#realisations">Réalisations</a></li>
+            <li><a href="#equipe">Équipe</a></li>
+            <li><a href="#atelier">Atelier</a></li>
+            <li data-nav="dondolie"><a href="#dondolie">Dondolie</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenu">
+      <section id="accueil" class="hero" aria-labelledby="hero-title">
+        <div class="hero-inner">
+          <h1 id="hero-title">
+            <span data-bind="hero-title">Une maison de création à Alger.</span>
+            <span class="hero-line" data-bind="hero-line">Studio, musique, médias — des récits qui restent.</span>
+          </h1>
+          <div class="hero-actions">
+            <a class="hero-link" href="#maison">
+              <span data-bind="hero-cta">Entrer</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a class="hero-link" href="#offre">
+              <span data-bind="hero-book">Réserver</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="maison" class="section maison" aria-labelledby="maison-title" tabindex="-1">
+        <div class="section-inner">
+          <h2 id="maison-title" data-bind="maison-title">Maison</h2>
+          <p class="lede" data-bind="maison-lede">Un même regard, de l’intention à la réalisation.</p>
+          <div class="prose" data-bind="maison-body">
+            <p>
+              K3CH réunit le studio, la musique et les médias à Alger. Image nette, son juste, récit
+              qui reste.
+            </p>
+          </div>
+
+          <ul class="works-grid">
+            <li class="work-card" data-work="studio" data-reveal>
+              <p class="work-label" data-bind="pillar-title">Studio</p>
+              <p class="work-line" data-bind="pillar-headline">L’image, nette.</p>
+            </li>
+            <li class="work-card" data-work="music" data-reveal>
+              <p class="work-label" data-bind="pillar-title">Music</p>
+              <p class="work-line" data-bind="pillar-headline">Le son, juste.</p>
+            </li>
+            <li class="work-card" data-work="media" data-reveal>
+              <p class="work-label" data-bind="pillar-title">Media</p>
+              <p class="work-line" data-bind="pillar-headline">Le récit, clair.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="realisations" class="section realisations" aria-labelledby="realisations-title" tabindex="-1">
+        <div class="section-inner">
+          <header class="section-header compact">
+            <h2 id="realisations-title" data-bind="works-title">Réalisations</h2>
+            <p class="section-intro" data-bind="works-intro">Media — image, récit, présence.</p>
+          </header>
+
+          <ul class="pieces-grid">
+            <li class="piece piece-featured" data-work-piece="lost-era" data-accent="media" data-reveal>
+              <figure>
+                <div class="piece-frame">
+                  <img
+                    data-work-image
+                    src="./works/lost-era-duo.jpg"
+                    width="2048"
+                    height="1152"
+                    alt="LOST ERA — deux silhouettes dos à dos, les yeux bandés, titre bleu électrique."
+                    decoding="async"
+                  />
+                </div>
+                <figcaption>
+                  <p class="piece-kicker" data-bind="work-kicker">Media</p>
+                  <h3 data-bind="work-title">LOST ERA</h3>
+                  <p class="piece-caption" data-bind="work-caption">Visuel.</p>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="piece piece-portrait" data-work-piece="lost-era-psyconce" data-accent="media" data-reveal>
+              <figure>
+                <div class="piece-frame">
+                  <img
+                    data-work-image
+                    src="./works/lost-era-psyconce.jpg"
+                    width="1006"
+                    height="1440"
+                    alt="Affiche LOST ERA, PSYCONCE — un visage levé vers le noir."
+                    decoding="async"
+                    loading="lazy"
+                  />
+                </div>
+                <figcaption>
+                  <p class="piece-kicker" data-bind="work-kicker">PSYCONCE</p>
+                  <h3 data-bind="work-title">LOST ERA</h3>
+                  <p class="piece-caption" data-bind="work-caption">Affiche.</p>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+
+          <ul class="pieces-grid studio-pieces" aria-label="Photographies du studio">
+            <li class="piece piece-portrait" data-work-piece="studio-booth" data-accent="media" data-reveal>
+              <figure>
+                <div class="piece-frame"><img data-work-image src="./works/studio-booth.jpg" width="1086" height="1448" alt="Cabine studio K3CH" loading="lazy" /></div>
+                <figcaption><p class="piece-kicker" data-bind="work-kicker">Studio</p><h3 data-bind="work-title">Cabine</h3><p class="piece-caption" data-bind="work-caption">Booth.</p></figcaption>
+              </figure>
+            </li>
+            <li class="piece piece-featured" data-work-piece="studio-session" data-accent="media" data-reveal>
+              <figure>
+                <div class="piece-frame"><img data-work-image src="./works/studio-session.jpg" width="1448" height="1086" alt="Session dans le studio K3CH" loading="lazy" /></div>
+                <figcaption><p class="piece-kicker" data-bind="work-kicker">Studio</p><h3 data-bind="work-title">Session</h3><p class="piece-caption" data-bind="work-caption">Enregistrement.</p></figcaption>
+              </figure>
+            </li>
+            <li class="piece piece-featured" data-work-piece="studio-wall" data-accent="media" data-reveal>
+              <figure>
+                <div class="piece-frame"><img data-work-image src="./works/studio-wall.jpg" width="1448" height="1086" alt="Mur du studio K3CH" loading="lazy" /></div>
+                <figcaption><p class="piece-kicker" data-bind="work-kicker">Studio</p><h3 data-bind="work-title">Wall</h3><p class="piece-caption" data-bind="work-caption">Espace.</p></figcaption>
+              </figure>
+            </li>
+            <li class="piece piece-portrait" data-work-piece="studio-desk" data-accent="media" data-reveal>
+              <figure>
+                <div class="piece-frame"><img data-work-image src="./works/studio-desk.jpg" width="1086" height="1448" alt="Bureau du studio K3CH" loading="lazy" /></div>
+                <figcaption><p class="piece-kicker" data-bind="work-kicker">Studio</p><h3 data-bind="work-title">Desk</h3><p class="piece-caption" data-bind="work-caption">Production.</p></figcaption>
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="equipe" class="section equipe" aria-labelledby="equipe-title" tabindex="-1">
+        <div class="section-inner">
+          <h2 id="equipe-title" data-bind="equipe-title">Équipe</h2>
+          <p class="lede" data-bind="equipe-lede">La maison, réunie.</p>
+          <figure class="equipe-frame" data-reveal>
+            <img
+              data-equipe-image
+              src="./equipe-k3ch.jpg"
+              width="1800"
+              height="1350"
+              alt="L’équipe Maison K3CH Production, réunie, vue en plongée."
+              decoding="async"
+              loading="lazy"
+            />
+            <figcaption data-bind="equipe-caption">Maison K3CH Production — Alger.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="atelier" class="section atelier" aria-labelledby="atelier-title" tabindex="-1">
+        <div class="section-inner">
+          <header class="section-header">
+            <h2 id="atelier-title" data-bind="atelier-title">Atelier</h2>
+            <p class="manifesto" data-bind="atelier-intro">
+              Le plateau, la salle, l’écran. Votre regard prime, de l’intention à la diffusion.
+            </p>
+          </header>
+
+          <figure class="atelier-atmosphere" data-atelier-atmosphere data-reveal>
+            <img
+              data-atmosphere-image
+              src="./works/studio-workstation.jpg"
+              width="2048"
+              height="1407"
+              alt="Poste de travail du studio K3CH."
+              decoding="async"
+              loading="lazy"
+            />
+            <figcaption>
+              <p class="piece-kicker" data-bind="atmosphere-kicker">Création</p>
+              <p class="atmosphere-caption" data-bind="atmosphere-caption">Lumière, plateau, matière.</p>
+            </figcaption>
+          </figure>
+
+          <ol class="step-list">
+            <li class="step" data-pillar="studio" data-reveal>
+              <div class="step-top">
+                <div class="step-copy">
+                  <h3 data-bind="pillar-title">Studio</h3>
+                  <p class="step-body" data-bind="pillar-text">
+                    Captation, plateau, lumière. On cadre ce qui doit rester.
+                  </p>
+                </div>
+                <p class="step-badge" aria-hidden="true" data-bind="pillar-number">1</p>
+              </div>
+              <div class="step-visual" data-motif="studio">
+                <p class="step-aside" data-bind="pillar-aside">Le silence, juste avant le clap.</p>
+              </div>
+            </li>
+            <li class="step" data-pillar="music" data-reveal>
+              <div class="step-top">
+                <div class="step-copy">
+                  <h3 data-bind="pillar-title">Music</h3>
+                  <p class="step-body" data-bind="pillar-text">
+                    Direction, enregistrement, mix. La musique porte le récit — elle n’est pas un décor.
+                  </p>
+                </div>
+                <p class="step-badge" aria-hidden="true" data-bind="pillar-number">2</p>
+              </div>
+              <div class="step-visual" data-motif="music">
+                <p class="step-aside" data-bind="pillar-aside">Quand ça sonne, on le sent.</p>
+              </div>
+            </li>
+            <li class="step" data-pillar="media" data-reveal>
+              <div class="step-top">
+                <div class="step-copy">
+                  <h3 data-bind="pillar-title">Media</h3>
+                  <p class="step-body" data-bind="pillar-text">
+                    Formats, plateformes, contenus. Être vu, pas seulement publié.
+                  </p>
+                </div>
+                <p class="step-badge" aria-hidden="true" data-bind="pillar-number">3</p>
+              </div>
+              <div class="step-visual has-lockup" data-motif="media">
+                <img
+                  class="step-lockup"
+                  data-media-lockup
+                  src="./k3ch-media-lockup.jpg"
+                  width="1792"
+                  height="1008"
+                  alt="K3CH Media — Maison K3CH Production, Alger."
+                  decoding="async"
+                  loading="lazy"
+                />
+                <p class="step-aside" data-bind="pillar-aside">Moins de bruit. Plus de présence.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="offre" class="section offre" aria-labelledby="offre-title" tabindex="-1">
+        <div class="section-inner">
+          <header class="section-header">
+            <p class="offre-kicker" data-bind="offre-kicker">Studio</p>
+            <h2 id="offre-title" data-bind="offre-title">Offre</h2>
+            <p class="lede" data-bind="offre-lede">On livre le titre, pas juste l’heure.</p>
+            <p class="section-intro" data-bind="offre-intro">
+              Cabine, mix, master — forfaits en dinars, Alger.
+            </p>
+          </header>
+
+          <ul class="prestation-list" data-bind="offre-prestations">
+            <li>Recording</li>
+            <li>Mix</li>
+            <li>Mastering</li>
+            <li>Location</li>
+            <li>Podcast / VO</li>
+          </ul>
+
+          <div class="tarifs" data-tarifs>
+            <ul class="pack-grid" data-tarifs-packs aria-label="Packs titre"></ul>
+            <div class="tarif-groups" data-tarifs-groups></div>
+            <noscript><p class="offre-note">Activez JavaScript pour afficher la grille tarifaire, ou contactez-nous sur WhatsApp.</p></noscript>
+            <p class="tarif-status" data-tarifs-status hidden></p>
+          </div>
+
+          <div class="offre-foot">
+            <p class="offre-note" data-bind="offre-note">
+              Réservation via WhatsApp 05 59 77 10 74. Acompte 50 % pour confirmer le créneau.
+            </p>
+            <a
+              class="offre-cta"
+              data-book-link
+              href="https://wa.me/213559771074?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20une%20session%20studio."
+              aria-label="Réserver une session sur WhatsApp"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <span data-bind="offre-cta">Réserver</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="parcours" class="section parcours" aria-labelledby="parcours-title" tabindex="-1">
+        <div class="section-inner">
+          <header class="section-header compact">
+            <h2 id="parcours-title" data-bind="parcours-title">Parcours</h2>
+            <p class="section-intro" data-bind="parcours-intro">De l’intention à la réalisation.</p>
+          </header>
+          <ol class="parcours-list">
+            <li data-step="intention" data-reveal>
+              <p class="parcours-number" data-bind="step-number">1</p>
+              <h3 data-bind="step-title">Intention</h3>
+              <p data-bind="step-text">On écoute. On clarifie le geste.</p>
+            </li>
+            <li data-step="creation" data-reveal>
+              <p class="parcours-number" data-bind="step-number">2</p>
+              <h3 data-bind="step-title">Création</h3>
+              <p data-bind="step-text">L’idée prend forme — cadre, rythme, matière.</p>
+            </li>
+            <li data-step="realisation" data-reveal>
+              <p class="parcours-number" data-bind="step-number">3</p>
+              <h3 data-bind="step-title">Réalisation</h3>
+              <p data-bind="step-text">On tourne, on assemble, on livre.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="dondolie" class="section dondolie" aria-labelledby="dondolie-title" tabindex="-1">
+        <div class="section-inner">
+          <div class="dondolie-stage">
+            <figure class="dondolie-emblem" data-reveal>
+              <img
+                data-dondolie-emblem
+                src="./dondolie-emblem.jpg"
+                width="1254"
+                height="1254"
+                alt="Emblème Dondolie — fourmi d’or au thorax en cœur, cercle ornementé, fond noir."
+                decoding="async"
+                loading="lazy"
+              />
+            </figure>
+            <div class="dondolie-copy">
+              <p class="dondolie-kicker" data-bind="dondolie-kicker">Merch</p>
+              <h2 id="dondolie-title" data-bind="dondolie-title">Dondolie</h2>
+              <p class="prose" data-bind="dondolie-text">L’or sur le noir. Une ligne à venir.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact" aria-labelledby="contact-title" tabindex="-1">
+        <div class="section-inner contact-inner">
+          <div class="contact-copy">
+            <h2 id="contact-title" data-bind="contact-title">Contactez-nous</h2>
+            <p class="contact-fallback" data-bind="contact-fallback">
+              Les coordonnées seront publiées ici.
+            </p>
+            <ul class="contact-list" data-bind="contact-list" hidden></ul>
+          </div>
+          <ul class="contact-orbs" data-bind="contact-orbs" hidden></ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p>
+          <span data-bind="name">Maison K3CH Production</span>
+          <span class="sep" aria-hidden="true">—</span>
+          <span data-bind="city">Alger</span>
+        </p>
+        <p>
+          <span aria-hidden="true">©</span>
+          <span data-bind="year"></span>
+          <span data-bind="footer-rights">Tous droits réservés.</span>
+        </p>
+      </div>
+    </footer>
+
+  </body>
+</html>

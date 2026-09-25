@@ -1,0 +1,17 @@
+node_modules
+dist
+.DS_Store
+*.log
+.vite
+.env
+.env.*
+
+# Ajouts 25/09/2026
+.wrangler/
+.dev.vars
+*.pem
+*.key
+*.p12
+*secret*
+*.local
+.git.bak-*/
