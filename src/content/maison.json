@@ -1,25 +1,25 @@
 {
   "title": "Maison",
-  "lede": "Un même regard, de l’intention à la réalisation.",
+  "lede": "Un même regard, de l’intention à la réalisation",
   "body": [
-    "K3CH réunit le studio, la musique et les médias à Alger. Image nette, son juste, récit qui reste."
+    "K3CH réunit le studio, la musique et les médias à Alger. Image nette, son juste, récit qui reste"
   ],
   "cards": [
     {
       "title": "Studio",
-      "headline": "L’image, nette.",
+      "headline": "L’image, nette",
       "image": "/works/spotlight-papers.jpg",
       "alt": "Silhouette sous un projecteur, feuilles au sol"
     },
     {
       "title": "Music",
-      "headline": "Le son, juste.",
+      "headline": "Le son, juste",
       "image": "/works/studio-booth.jpg",
       "alt": "Cabine d’enregistrement du studio K3CH"
     },
     {
       "title": "Media",
-      "headline": "Le récit, clair.",
+      "headline": "Le récit, clair",
       "image": "/works/studio-onair.jpg",
       "alt": "Régie K3CH avec l’enseigne On Air"
     }
