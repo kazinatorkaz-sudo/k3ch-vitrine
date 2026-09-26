@@ -24,7 +24,6 @@ Cette clé (un « jeton ») permet à l'admin d'enregistrer vos changements dans
 1. Ouvrez https://kazinatorkaz-sudo.github.io/k3ch-vitrine/admin/
 2. Cliquez sur **Se connecter avec un jeton d'accès**, collez votre clé, puis cliquez sur **Se connecter**.
 3. L'interface s'affiche en français si votre navigateur est en français. Sinon, changez la langue dans le menu de votre compte (en haut à droite) → **Paramètres** → **Langue**.
-4. Ignorez le bouton « Travailler avec un dépôt local », il est réservé aux développeurs.
 
 Vous restez connecté sur ce navigateur. Sur un ordinateur partagé, déconnectez-vous après usage (menu du compte → **Se déconnecter**).
 
