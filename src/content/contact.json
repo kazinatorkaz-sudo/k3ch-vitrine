@@ -1,0 +1,25 @@
+{
+  "title": "Contactez-nous",
+  "phoneLabel": "Studio",
+  "phoneDisplay": "05 59 77 10 74",
+  "phoneTel": "+213559771074",
+  "instagramTitle": "Instagram",
+  "instagram": [
+    {
+      "handle": "k3chmusic",
+      "url": "https://www.instagram.com/k3chmusic/"
+    },
+    {
+      "handle": "k3chstudio",
+      "url": "https://www.instagram.com/k3chstudio/"
+    },
+    {
+      "handle": "k3ch.vision",
+      "url": "https://www.instagram.com/k3ch.vision/"
+    },
+    {
+      "handle": "k3ch.media",
+      "url": "https://www.instagram.com/k3ch.media/"
+    }
+  ]
+}

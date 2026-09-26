@@ -1,0 +1,308 @@
+# Admin du site K3CH — Sveltia CMS (https://sveltiacms.app), compatible Decap CMS.
+# Chaque enregistrement crée un commit sur main → GitHub Actions reconstruit et publie le site (~1 à 2 min).
+# Connexion : « Se connecter avec un jeton » (jeton GitHub à grain fin, limité à ce dépôt, Contents : lecture/écriture).
+# Langue de l'interface : automatique (suit le navigateur ; français disponible).
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+
+backend:
+  name: github
+  repo: kazinatorkaz-sudo/k3ch-vitrine
+  branch: main
+  # Connexion par jeton uniquement (pas de serveur OAuth sur GitHub Pages).
+  auth_methods: [token]
+  commit_messages:
+    create: 'Admin : création {{collection}} « {{slug}} »'
+    update: 'Admin : mise à jour {{collection}} « {{slug}} »'
+    delete: 'Admin : suppression {{collection}} « {{slug}} »'
+    uploadMedia: 'Admin : ajout média « {{path}} »'
+    deleteMedia: 'Admin : suppression média « {{path}} »'
+
+site_url: https://kazinatorkaz-sudo.github.io/k3ch-vitrine/
+display_url: https://kazinatorkaz-sudo.github.io/k3ch-vitrine/
+
+# Images envoyées depuis l'admin : public/uploads (servies sous /k3ch-vitrine/uploads/).
+media_folder: /public/uploads
+public_folder: /uploads
+
+media_libraries:
+  default:
+    config:
+      transformations:
+        raster_image:
+          format: webp
+          quality: 85
+          width: 2000
+          height: 2000
+
+collections:
+  # ─────────────────────────────── Textes des sections ───────────────────────────────
+  - name: sections
+    label: Sections du site
+    label_singular: Section
+    description: "Textes et images de chaque section, dans l'ordre de la page."
+    icon: article
+    files:
+      - name: site
+        label: "Général (onglet, menu, pied de page)"
+        file: src/content/site.json
+        fields:
+          - { name: documentTitle, label: "Titre de l'onglet du navigateur", widget: string }
+          - { name: documentDescription, label: "Description (Google, partages)", widget: text }
+          - name: nav
+            label: Menu
+            widget: object
+            hint: "Libellés du menu. Les liens (ancres) ne changent pas."
+            fields:
+              - { name: accueil, label: Accueil, widget: string }
+              - { name: maison, label: Maison, widget: string }
+              - { name: offre, label: Offre, widget: string }
+              - { name: realisations, label: Collaborations, widget: string }
+              - { name: label, label: Label, widget: string }
+              - { name: equipe, label: Équipe, widget: string }
+              - { name: atelier, label: Atelier, widget: string }
+              - { name: dondolie, label: Dondolie, widget: string }
+              - { name: contact, label: Contact, widget: string }
+          - { name: footerName, label: "Pied de page — nom", widget: string }
+          - { name: footerCity, label: "Pied de page — ville", widget: string }
+          - { name: footerRights, label: "Pied de page — mention", widget: string }
+
+      - name: accueil
+        label: Accueil (haut de page)
+        file: src/content/accueil.json
+        fields:
+          - { name: title, label: Accroche, widget: string }
+          - { name: line, label: "Sous-accroche", widget: string }
+          - { name: cta, label: "Bouton « Entrer »", widget: string }
+          - { name: book, label: "Bouton « Réserver »", widget: string, hint: "Mène à la section Offre." }
+
+      - name: maison
+        label: Maison
+        file: src/content/maison.json
+        fields:
+          - { name: title, label: Titre, widget: string }
+          - { name: lede, label: "Phrase d'accroche", widget: string }
+          - { name: body, label: Paragraphes, label_singular: paragraphe, widget: list, field: { name: paragraphe, label: Paragraphe, widget: text } }
+          - name: cards
+            label: Cartes (Studio, Music, Media)
+            label_singular: carte
+            widget: list
+            summary: "{{title}} — {{headline}}"
+            fields:
+              - { name: title, label: Titre, widget: string }
+              - { name: headline, label: Phrase, widget: string }
+              - { name: image, label: Photo, widget: image, media_folder: /public/works, public_folder: /works, hint: "Affichée en noir et blanc (charte)." }
+              - { name: alt, label: "Description de la photo (accessibilité)", widget: string }
+
+      - name: collaborations
+        label: Collaborations
+        file: src/content/collaborations.json
+        fields:
+          - { name: title, label: Titre, widget: string }
+          - { name: intro, label: Introduction, widget: string }
+          - name: pieces
+            label: Visuels (première rangée)
+            label_singular: visuel
+            widget: list
+            summary: "{{kicker}} — {{title}}"
+            fields: &piece
+              - { name: kicker, label: "Surtitre (artiste, catégorie)", widget: string }
+              - { name: title, label: Titre, widget: string }
+              - { name: caption, label: Légende, widget: string, required: false }
+              - { name: image, label: Image, widget: image, media_folder: /public/works, public_folder: /works }
+              - { name: alt, label: "Description de l'image (accessibilité)", widget: string }
+              - name: format
+                label: Format du cadre
+                widget: select
+                default: paysage
+                options:
+                  - { label: Paysage (large), value: paysage }
+                  - { label: Portrait (vertical), value: portrait }
+          - name: studio
+            label: Photos du studio (deuxième rangée)
+            label_singular: photo
+            widget: list
+            summary: "{{kicker}} — {{title}}"
+            fields: *piece
+
+      - name: label-textes
+        label: Label — textes
+        file: src/content/label.json
+        fields:
+          - { name: title, label: Titre, widget: string }
+          - { name: intro, label: Introduction, widget: string }
+
+      - name: equipe
+        label: Équipe
+        file: src/content/equipe.json
+        fields:
+          - { name: title, label: Titre, widget: string }
+          - { name: lede, label: "Phrase d'accroche", widget: string }
+          - { name: image, label: Photo, widget: image, hint: "Affichée en noir et blanc (charte)." }
+          - { name: alt, label: "Description de la photo (accessibilité)", widget: string }
+          - { name: caption, label: Légende, widget: string }
+
+      - name: atelier
+        label: Atelier
+        file: src/content/atelier.json
+        fields:
+          - { name: title, label: Titre, widget: string }
+          - { name: intro, label: Manifeste, widget: text }
+          - name: atmosphere
+            label: Grande photo
+            widget: object
+            fields:
+              - { name: kicker, label: Surtitre, widget: string }
+              - { name: caption, label: Légende, widget: string }
+              - { name: image, label: Photo, widget: image, media_folder: /public/works, public_folder: /works }
+              - { name: alt, label: "Description de la photo (accessibilité)", widget: string }
+          - name: pillars
+            label: Étapes (Studio, Music, Media)
+            label_singular: étape
+            widget: list
+            hint: "Numérotées automatiquement dans l'ordre."
+            summary: "{{title}}"
+            fields:
+              - { name: title, label: Titre, widget: string }
+              - { name: text, label: Texte, widget: text }
+              - { name: aside, label: Phrase sur l'image, widget: string }
+              - { name: image, label: Photo, widget: image, required: false, media_folder: /public/works, public_folder: /works, hint: "Laisser vide pour afficher le logo K3CH à la place." }
+              - { name: alt, label: "Description de l'image (accessibilité)", widget: string }
+
+      - name: offre
+        label: Offre (textes et bouton Réserver)
+        file: src/content/offre.json
+        fields:
+          - { name: kicker, label: Surtitre, widget: string }
+          - { name: title, label: Titre, widget: string }
+          - { name: lede, label: "Phrase d'accroche", widget: string }
+          - { name: intro, label: Introduction, widget: string }
+          - { name: prestations, label: Prestations, label_singular: prestation, widget: list, field: { name: prestation, label: Prestation, widget: string } }
+          - { name: note, label: "Note (réservation, acompte)", widget: text, hint: "Pensez à y mettre à jour le numéro WhatsApp s'il change." }
+          - { name: cta, label: "Texte du bouton", widget: string }
+          - { name: whatsapp, label: "Numéro WhatsApp du bouton (format international, sans + ni espaces)", widget: string, pattern: ['^\d{8,15}$', "Chiffres uniquement, ex. 213559771074"], hint: "05 59 77 10 74 → 213559771074" }
+          - { name: bookingMessage, label: "Message pré-rempli dans WhatsApp", widget: string }
+
+      - name: parcours
+        label: Parcours
+        file: src/content/parcours.json
+        fields:
+          - { name: title, label: Titre, widget: string }
+          - { name: intro, label: Introduction, widget: string }
+          - name: steps
+            label: Étapes
+            label_singular: étape
+            widget: list
+            hint: "Numérotées automatiquement dans l'ordre."
+            summary: "{{title}}"
+            fields:
+              - { name: title, label: Titre, widget: string }
+              - { name: text, label: Texte, widget: string }
+
+      - name: dondolie-textes
+        label: Dondolie — textes
+        file: src/content/dondolie.json
+        fields:
+          - { name: kicker, label: Surtitre, widget: string, hint: "Section à la charte Dondolie (navy et sable). Le logotype « dondolie » n'est pas modifiable." }
+          - { name: text, label: Texte, widget: string }
+          - { name: story, label: "Histoire du logo", widget: string }
+          - { name: collectionTitle, label: "Titre de la collection", widget: string }
+          - { name: soon, label: "Ligne sous le titre", widget: string, required: false }
+
+      - name: contact
+        label: Contact (téléphone, Instagram)
+        file: src/content/contact.json
+        fields:
+          - { name: title, label: Titre, widget: string }
+          - { name: phoneLabel, label: "Libellé du téléphone", widget: string }
+          - { name: phoneDisplay, label: "Téléphone affiché", widget: string, required: false, hint: "Ex. 05 59 77 10 74. Laisser vide pour masquer." }
+          - { name: phoneTel, label: "Téléphone pour l'appel (format international)", widget: string, required: false, hint: "Ex. +213559771074" }
+          - { name: instagramTitle, label: "Titre Instagram", widget: string }
+          - name: instagram
+            label: Comptes Instagram
+            label_singular: compte
+            widget: list
+            summary: "@{{handle}}"
+            fields:
+              - { name: handle, label: "Nom du compte (sans @)", widget: string }
+              - { name: url, label: Lien, widget: string, hint: "Ex. https://www.instagram.com/k3chmusic/ (sans ?igsh=…)" }
+
+  # ─────────────────────────────── Listes ───────────────────────────────
+  - name: listes
+    label: Listes (Label, Dondolie)
+    label_singular: Liste
+    icon: list
+    files:
+      - name: label-titres
+        label: Label — titres YouTube
+        file: src/label.json
+        fields:
+          - name: tracks
+            label: Titres
+            label_singular: titre
+            widget: list
+            root: true
+            summary: "{{artist}} — {{title}}"
+            fields:
+              - { name: id, label: "Identifiant de la vidéo YouTube", widget: string, hint: "Dans youtube.com/watch?v=XP8n9puuTYo, l'identifiant est XP8n9puuTYo." }
+              - { name: artist, label: Artiste, widget: string }
+              - { name: title, label: Titre, widget: string }
+              - { name: image, label: "Miniature (facultatif)", widget: image, required: false, media_folder: /public/label, public_folder: /label, hint: "Vide : miniature YouTube automatique." }
+
+      - name: dondolie-produits
+        label: Dondolie — collection
+        file: src/dondolie.json
+        fields:
+          - name: products
+            label: Produits
+            label_singular: produit
+            widget: list
+            root: true
+            summary: "{{label}}"
+            fields:
+              - { name: id, label: "Identifiant (sans espaces)", widget: string, hint: "Ex. sneaker-run" }
+              - { name: label, label: Nom affiché, widget: string }
+              - { name: image, label: Photo, widget: image, media_folder: /public/dondolie, public_folder: /dondolie, hint: "En couleur, idéalement 800 × 1000 px (format 4:5)." }
+              - { name: alt, label: "Description de la photo (accessibilité)", widget: string }
+
+
+  # ─────────────────────────────── Réglages ───────────────────────────────
+  - name: reglages
+    label: Réglages
+    icon: settings
+    files:
+      - name: typo
+        label: Typographie (polices et tailles)
+        file: src/content/typo.json
+        fields:
+          - name: titres
+            label: "Titres (grands titres de section, accroche)"
+            widget: object
+            collapsed: false
+            hint: "Titres de section et accroche du haut de page. Montserrat + Normal = charte K3CH (réglage d'origine), pour chaque rôle. La section Dondolie garde sa propre charte."
+            fields:
+              - { name: police, label: Police, widget: select, default: Montserrat, options: &polices [{ label: "Montserrat (charte K3CH)", value: "Montserrat" }, { label: "Inter", value: "Inter" }, { label: "Poppins", value: "Poppins" }, { label: "Raleway", value: "Raleway" }, { label: "Work Sans", value: "Work Sans" }, { label: "DM Sans", value: "DM Sans" }, { label: "Manrope", value: "Manrope" }, { label: "Outfit", value: "Outfit" }, { label: "Space Grotesk", value: "Space Grotesk" }, { label: "Archivo", value: "Archivo" }, { label: "Oswald", value: "Oswald" }, { label: "Bebas Neue", value: "Bebas Neue" }, { label: "Playfair Display", value: "Playfair Display" }, { label: "Cormorant Garamond", value: "Cormorant Garamond" }] }
+              - { name: taille, label: Taille, widget: select, default: "1", options: &tailles [{ label: "Petit", value: "0.9" }, { label: "Normal (charte)", value: "1" }, { label: "Grand", value: "1.12" }, { label: "Très grand", value: "1.25" }] }
+          - name: soustitres
+            label: "Sous-titres (titres de cartes, surtitres)"
+            widget: object
+            collapsed: false
+            hint: "Titres des cartes et étapes, surtitres, prix."
+            fields:
+              - { name: police, label: Police, widget: select, default: Montserrat, options: *polices }
+              - { name: taille, label: Taille, widget: select, default: "1", options: *tailles }
+          - name: texte
+            label: "Texte courant"
+            widget: object
+            collapsed: false
+            hint: "Paragraphes, légendes, contact, pied de page."
+            fields:
+              - { name: police, label: Police, widget: select, default: Montserrat, options: *polices }
+              - { name: taille, label: Taille, widget: select, default: "1", options: *tailles }
+          - name: boutons
+            label: "Boutons et menu"
+            widget: object
+            collapsed: false
+            hint: "Menu, boutons, liste des prestations."
+            fields:
+              - { name: police, label: Police, widget: select, default: Montserrat, options: *polices }
+              - { name: taille, label: Taille, widget: select, default: "1", options: *tailles }

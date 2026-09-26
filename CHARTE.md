@@ -18,6 +18,9 @@ Les logos et le pictogramme ont été extraits **en vectoriel** depuis le PDF (p
 | **Logo** : principal (arbre + K3CH + MUSIC & MEDIA), horizontal, emblème seul, emblème + K3CH ; blanc sur fond noir | En-tête et pied de page : logo horizontal ; hero et bloc Media de l'atelier : logo principal ; favicon : emblème Off White sur #0B0B0B. Logos non recolorés, non déformés, sur fond noir. |
 | **Style photo** (planche 01) : noir et blanc, contrasté | Photos de la maison (studio, équipe, atelier) en noir et blanc via CSS (`grayscale(1) contrast(1.06)`) ; fichiers d'origine inchangés. |
 
+## Typographie réglable (admin)
+L'admin (`/admin/`, Réglages → Typographie, fichier `src/content/typo.json`) permet de changer la police et la taille (Petit, Normal, Grand, Très grand) de quatre rôles : titres, sous-titres, texte courant, boutons et menu. Ces réglages passent par des variables CSS (`--font-*`, `--ts-*`). **Montserrat + Normal partout = charte** ; c'est le réglage par défaut. La section Dondolie remet ces variables à zéro et garde sa propre charte.
+
 ## Exception Dondolie
 Dondolie est une sous-marque (merch) avec sa propre charte (`dondolie logo.pdf`). Elle s'applique **uniquement à la section `#dondolie`** ; le reste du site suit la charte K3CH ci-dessus.
 - **Palette** (valeurs relevées sur la charte) : navy `#1D1F2C` (fond de section, cadre de l'emblème) et sable `#C9B087` (logotype, surtitre, textes, filets en transparence). Variables CSS `--dondolie-navy`, `--dondolie-sand` limitées à `.dondolie`.

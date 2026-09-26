@@ -1,8 +1,38 @@
 [
-  { "id": "sneaker-run", "label": "Sneaker Run", "image": "dondolie/sneaker-run.webp", "alt": "Sneaker running noire en mesh, emblème Dondolie or." },
-  { "id": "sneaker-basse", "label": "Sneaker Basse", "image": "dondolie/sneaker-basse.webp", "alt": "Sneaker basse en cuir noir, emblème Dondolie or." },
-  { "id": "survetement", "label": "Survêtement", "image": "dondolie/survetement.webp", "alt": "Survêtement noir, veste et pantalon, emblème Dondolie or." },
-  { "id": "hoodie", "label": "Hoodie", "image": "dondolie/hoodie.webp", "alt": "Hoodie anthracite, emblème Dondolie or." },
-  { "id": "tshirt-oversize", "label": "T-shirt Oversize", "image": "dondolie/tshirt-oversize.webp", "alt": "T-shirt oversize crème, emblème Dondolie or." },
-  { "id": "polo", "label": "Polo", "image": "dondolie/polo.webp", "alt": "Polo navy, emblème Dondolie or." }
+  {
+    "id": "sneaker-run",
+    "label": "Sneaker Run",
+    "image": "/dondolie/sneaker-run.webp",
+    "alt": "Sneaker running noire en mesh, emblème Dondolie or."
+  },
+  {
+    "id": "sneaker-basse",
+    "label": "Sneaker Basse",
+    "image": "/dondolie/sneaker-basse.webp",
+    "alt": "Sneaker basse en cuir noir, emblème Dondolie or."
+  },
+  {
+    "id": "survetement",
+    "label": "Survêtement",
+    "image": "/dondolie/survetement.webp",
+    "alt": "Survêtement noir, veste et pantalon, emblème Dondolie or."
+  },
+  {
+    "id": "hoodie",
+    "label": "Hoodie",
+    "image": "/dondolie/hoodie.webp",
+    "alt": "Hoodie anthracite, emblème Dondolie or."
+  },
+  {
+    "id": "tshirt-oversize",
+    "label": "T-shirt Oversize",
+    "image": "/dondolie/tshirt-oversize.webp",
+    "alt": "T-shirt oversize crème, emblème Dondolie or."
+  },
+  {
+    "id": "polo",
+    "label": "Polo",
+    "image": "/dondolie/polo.webp",
+    "alt": "Polo navy, emblème Dondolie or."
+  }
 ]

@@ -1,12 +1,13 @@
 /**
  * Section Label : titres des artistes du label K3CH.
  * Données : src/label.json (id YouTube, artiste, titre).
- * Miniature locale public/label/<id>.jpg ; l'iframe youtube-nocookie
+ * Miniature : image choisie dans l'admin, sinon public/label/<id>.jpg, sinon miniature YouTube ; l'iframe youtube-nocookie
  * n'est créée qu'au clic (lite-embed, rien de lourd au chargement).
  */
 import tracks from "./label.json";
 
 const base = import.meta.env.BASE_URL;
+const asset = (p) => (/^(https?:)?\/\//.test(p) ? p : `${base}${String(p).replace(/^\.?\/+/, "")}`);
 
 function el(tag, attrs = {}, children = []) {
   const node = document.createElement(tag);
@@ -34,12 +35,17 @@ function play(frame, track) {
 function renderTrack(track) {
   const label = [track.artist, track.title].filter(Boolean).join(" — ");
   const img = el("img", {
-    src: `${base}label/${track.id}.jpg`,
+    src: track.image ? asset(track.image) : `${base}label/${track.id}.jpg`,
     width: "1280",
     height: "720",
     alt: "",
     loading: "lazy",
     decoding: "async",
+  });
+  // Titre ajouté depuis l'admin sans miniature locale : miniature YouTube.
+  img.addEventListener("error", () => {
+    const yt = `https://i.ytimg.com/vi/${encodeURIComponent(track.id)}/hqdefault.jpg`;
+    if (img.src !== yt) img.src = yt;
   });
   const button = el(
     "button",

@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Maison de création à Alger. Studio, Music, Media — cabine, mix, master. On livre le titre, pas juste l’heure."
+      content="{{ site.documentDescription }}"
     />
     <meta name="theme-color" content="#0B0B0B" />
-    <title>Maison K3CH Production — Alger</title>
+    <title>{{ site.documentTitle }}</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,6 +21,8 @@
       href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@800&text=dondolie&display=swap"
       rel="stylesheet"
     />
+    <!-- Typographie choisie dans l'admin (src/content/typo.json) ; par défaut : Montserrat, tailles d'origine. -->
+    {{{ bloc:typo }}}
     <link rel="stylesheet" href="/src/styles.css" />
     <script type="module" src="/src/main.js"></script>
   </head>
@@ -54,15 +56,15 @@
 
         <nav id="navigation" class="site-nav" data-nav-panel data-open="false" aria-label="Navigation principale">
           <ul>
-            <li><a href="#accueil">Accueil</a></li>
-            <li><a href="#maison">Maison</a></li>
-            <li><a href="#offre">Offre</a></li>
-            <li><a href="#realisations">Collaborations</a></li>
-            <li><a href="#label">Label</a></li>
-            <li><a href="#equipe">Équipe</a></li>
-            <li><a href="#atelier">Atelier</a></li>
-            <li data-nav="dondolie"><a href="#dondolie">Dondolie</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#accueil">{{ site.nav.accueil }}</a></li>
+            <li><a href="#maison">{{ site.nav.maison }}</a></li>
+            <li><a href="#offre">{{ site.nav.offre }}</a></li>
+            <li><a href="#realisations">{{ site.nav.realisations }}</a></li>
+            <li><a href="#label">{{ site.nav.label }}</a></li>
+            <li><a href="#equipe">{{ site.nav.equipe }}</a></li>
+            <li><a href="#atelier">{{ site.nav.atelier }}</a></li>
+            <li data-nav="dondolie"><a href="#dondolie">{{ site.nav.dondolie }}</a></li>
+            <li><a href="#contact">{{ site.nav.contact }}</a></li>
           </ul>
         </nav>
       </div>
@@ -80,16 +82,16 @@
             decoding="async"
           />
           <h1 id="hero-title">
-            <span data-bind="hero-title">Une maison de création à Alger.</span>
-            <span class="hero-line" data-bind="hero-line">Studio, musique, médias — des récits qui restent.</span>
+            <span data-bind="hero-title">{{ accueil.title }}</span>
+            <span class="hero-line" data-bind="hero-line">{{ accueil.line }}</span>
           </h1>
           <div class="hero-actions">
             <a class="hero-link" href="#maison">
-              <span data-bind="hero-cta">Entrer</span>
+              <span data-bind="hero-cta">{{ accueil.cta }}</span>
               <span aria-hidden="true">↗</span>
             </a>
             <a class="hero-link" href="#offre">
-              <span data-bind="hero-book">Réserver</span>
+              <span data-bind="hero-book">{{ accueil.book }}</span>
               <span aria-hidden="true">↗</span>
             </a>
           </div>
@@ -98,31 +100,12 @@
 
       <section id="maison" class="section maison" aria-labelledby="maison-title" tabindex="-1">
         <div class="section-inner">
-          <h2 id="maison-title" data-bind="maison-title">Maison</h2>
-          <p class="lede" data-bind="maison-lede">Un même regard, de l’intention à la réalisation.</p>
-          <div class="prose" data-bind="maison-body">
-            <p>
-              K3CH réunit le studio, la musique et les médias à Alger. Image nette, son juste, récit
-              qui reste.
-            </p>
+          <h2 id="maison-title" data-bind="maison-title">{{ maison.title }}</h2>
+          <p class="lede" data-bind="maison-lede">{{ maison.lede }}</p>
+          <div class="prose" data-bind="maison-body">{{{ bloc:maison-body }}}
           </div>
 
-          <ul class="works-grid">
-            <li class="work-card" data-work="studio" data-reveal>
-              <img class="work-photo" src="./works/spotlight-papers.jpg" width="2048" height="1407" alt="Silhouette sous un projecteur, feuilles au sol" loading="lazy" decoding="async" />
-              <p class="work-label" data-bind="pillar-title">Studio</p>
-              <p class="work-line" data-bind="pillar-headline">L’image, nette.</p>
-            </li>
-            <li class="work-card" data-work="music" data-reveal>
-              <img class="work-photo" src="./works/studio-booth.jpg" width="1086" height="1448" alt="Cabine d’enregistrement du studio K3CH" loading="lazy" decoding="async" />
-              <p class="work-label" data-bind="pillar-title">Music</p>
-              <p class="work-line" data-bind="pillar-headline">Le son, juste.</p>
-            </li>
-            <li class="work-card" data-work="media" data-reveal>
-              <img class="work-photo" src="./works/studio-onair.jpg" width="1448" height="1086" alt="Régie K3CH avec l’enseigne On Air" loading="lazy" decoding="async" />
-              <p class="work-label" data-bind="pillar-title">Media</p>
-              <p class="work-line" data-bind="pillar-headline">Le récit, clair.</p>
-            </li>
+          <ul class="works-grid">{{{ bloc:maison-cards }}}
           </ul>
         </div>
       </section>
@@ -130,77 +113,14 @@
       <section id="realisations" class="section realisations" aria-labelledby="realisations-title" tabindex="-1">
         <div class="section-inner">
           <header class="section-header compact">
-            <h2 id="realisations-title" data-bind="works-title">Collaborations</h2>
-            <p class="section-intro" data-bind="works-intro">Media — image, récit, présence.</p>
+            <h2 id="realisations-title" data-bind="works-title">{{ collaborations.title }}</h2>
+            <p class="section-intro" data-bind="works-intro">{{ collaborations.intro }}</p>
           </header>
 
-          <ul class="pieces-grid">
-            <li class="piece piece-featured" data-work-piece="lost-era" data-accent="media" data-reveal>
-              <figure>
-                <div class="piece-frame">
-                  <img
-                    data-work-image
-                    src="./works/lost-era-duo.jpg"
-                    width="2048"
-                    height="1152"
-                    alt="LOST ERA — deux silhouettes dos à dos, les yeux bandés, titre bleu électrique."
-                    decoding="async"
-                  />
-                </div>
-                <figcaption>
-                  <p class="piece-kicker" data-bind="work-kicker">Media</p>
-                  <h3 data-bind="work-title">LOST ERA</h3>
-                  <p class="piece-caption" data-bind="work-caption">Visuel.</p>
-                </figcaption>
-              </figure>
-            </li>
-            <li class="piece piece-portrait" data-work-piece="lost-era-psyconce" data-accent="media" data-reveal>
-              <figure>
-                <div class="piece-frame">
-                  <img
-                    data-work-image
-                    src="./works/lost-era-psyconce.jpg"
-                    width="1006"
-                    height="1440"
-                    alt="Affiche LOST ERA, PSYCONCE — un visage levé vers le noir."
-                    decoding="async"
-                    loading="lazy"
-                  />
-                </div>
-                <figcaption>
-                  <p class="piece-kicker" data-bind="work-kicker">PSYCONCE</p>
-                  <h3 data-bind="work-title">LOST ERA</h3>
-                  <p class="piece-caption" data-bind="work-caption">Affiche.</p>
-                </figcaption>
-              </figure>
-            </li>
+          <ul class="pieces-grid">{{{ bloc:collab-pieces }}}
           </ul>
 
-          <ul class="pieces-grid studio-pieces" aria-label="Photographies du studio">
-            <li class="piece piece-portrait" data-work-piece="studio-booth" data-accent="media" data-reveal>
-              <figure>
-                <div class="piece-frame"><img data-work-image src="./works/studio-booth.jpg" width="1086" height="1448" alt="Cabine studio K3CH" loading="lazy" /></div>
-                <figcaption><p class="piece-kicker" data-bind="work-kicker">Studio</p><h3 data-bind="work-title">Cabine</h3><p class="piece-caption" data-bind="work-caption">Booth.</p></figcaption>
-              </figure>
-            </li>
-            <li class="piece piece-featured" data-work-piece="studio-session" data-accent="media" data-reveal>
-              <figure>
-                <div class="piece-frame"><img data-work-image src="./works/studio-session.jpg" width="1448" height="1086" alt="Session dans le studio K3CH" loading="lazy" /></div>
-                <figcaption><p class="piece-kicker" data-bind="work-kicker">Studio</p><h3 data-bind="work-title">Session</h3><p class="piece-caption" data-bind="work-caption">Enregistrement.</p></figcaption>
-              </figure>
-            </li>
-            <li class="piece piece-featured" data-work-piece="studio-wall" data-accent="media" data-reveal>
-              <figure>
-                <div class="piece-frame"><img data-work-image src="./works/studio-wall.jpg" width="1448" height="1086" alt="Mur du studio K3CH" loading="lazy" /></div>
-                <figcaption><p class="piece-kicker" data-bind="work-kicker">Studio</p><h3 data-bind="work-title">Wall</h3><p class="piece-caption" data-bind="work-caption">Espace.</p></figcaption>
-              </figure>
-            </li>
-            <li class="piece piece-portrait" data-work-piece="studio-desk" data-accent="media" data-reveal>
-              <figure>
-                <div class="piece-frame"><img data-work-image src="./works/studio-desk.jpg" width="1086" height="1448" alt="Bureau du studio K3CH" loading="lazy" /></div>
-                <figcaption><p class="piece-kicker" data-bind="work-kicker">Studio</p><h3 data-bind="work-title">Desk</h3><p class="piece-caption" data-bind="work-caption">Production.</p></figcaption>
-              </figure>
-            </li>
+          <ul class="pieces-grid studio-pieces" aria-label="Photographies du studio">{{{ bloc:collab-studio }}}
           </ul>
         </div>
       </section>
@@ -208,8 +128,8 @@
       <section id="label" class="section label" aria-labelledby="label-title" tabindex="-1">
         <div class="section-inner">
           <header class="section-header compact">
-            <h2 id="label-title">Label</h2>
-            <p class="section-intro">Les voix de la maison.</p>
+            <h2 id="label-title">{{ label.title }}</h2>
+            <p class="section-intro">{{ label.intro }}</p>
           </header>
 
           <ul class="pieces-grid label-grid" data-label-list aria-label="Titres du label K3CH"></ul>
@@ -218,19 +138,11 @@
 
       <section id="equipe" class="section equipe" aria-labelledby="equipe-title" tabindex="-1">
         <div class="section-inner">
-          <h2 id="equipe-title" data-bind="equipe-title">Équipe</h2>
-          <p class="lede" data-bind="equipe-lede">La maison, réunie.</p>
+          <h2 id="equipe-title" data-bind="equipe-title">{{ equipe.title }}</h2>
+          <p class="lede" data-bind="equipe-lede">{{ equipe.lede }}</p>
           <figure class="equipe-frame" data-reveal>
-            <img
-              data-equipe-image
-              src="./equipe-k3ch.jpg"
-              width="1800"
-              height="1350"
-              alt="L’équipe Maison K3CH Production, réunie, vue en plongée."
-              decoding="async"
-              loading="lazy"
-            />
-            <figcaption data-bind="equipe-caption">Maison K3CH Production — Alger.</figcaption>
+            {{{ bloc:equipe-image }}}
+            <figcaption data-bind="equipe-caption">{{ equipe.caption }}</figcaption>
           </figure>
         </div>
       </section>
@@ -238,83 +150,19 @@
       <section id="atelier" class="section atelier" aria-labelledby="atelier-title" tabindex="-1">
         <div class="section-inner">
           <header class="section-header">
-            <h2 id="atelier-title" data-bind="atelier-title">Atelier</h2>
-            <p class="manifesto" data-bind="atelier-intro">
-              Le plateau, la salle, l’écran. Votre regard prime, de l’intention à la diffusion.
-            </p>
+            <h2 id="atelier-title" data-bind="atelier-title">{{ atelier.title }}</h2>
+            <p class="manifesto" data-bind="atelier-intro">{{ atelier.intro }}</p>
           </header>
 
           <figure class="atelier-atmosphere" data-atelier-atmosphere data-reveal>
-            <img
-              data-atmosphere-image
-              src="./works/studio-workstation.jpg"
-              width="2048"
-              height="1407"
-              alt="Poste de travail du studio K3CH."
-              decoding="async"
-              loading="lazy"
-            />
+            {{{ bloc:atelier-atmosphere }}}
             <figcaption>
-              <p class="piece-kicker" data-bind="atmosphere-kicker">Création</p>
-              <p class="atmosphere-caption" data-bind="atmosphere-caption">Lumière, plateau, matière.</p>
+              <p class="piece-kicker" data-bind="atmosphere-kicker">{{ atelier.atmosphere.kicker }}</p>
+              <p class="atmosphere-caption" data-bind="atmosphere-caption">{{ atelier.atmosphere.caption }}</p>
             </figcaption>
           </figure>
 
-          <ol class="step-list">
-            <li class="step" data-pillar="studio" data-reveal>
-              <div class="step-top">
-                <div class="step-copy">
-                  <h3 data-bind="pillar-title">Studio</h3>
-                  <p class="step-body" data-bind="pillar-text">
-                    Captation, plateau, lumière. On cadre ce qui doit rester.
-                  </p>
-                </div>
-                <p class="step-badge" aria-hidden="true" data-bind="pillar-number">1</p>
-              </div>
-              <div class="step-visual has-photo" data-motif="studio">
-                <img class="step-photo" src="./works/studio-wall.jpg" width="1448" height="1086" alt="Mur du studio K3CH, vinyles et panneaux acoustiques" loading="lazy" decoding="async" />
-                <p class="step-aside" data-bind="pillar-aside">Le silence, juste avant le clap.</p>
-              </div>
-            </li>
-            <li class="step" data-pillar="music" data-reveal>
-              <div class="step-top">
-                <div class="step-copy">
-                  <h3 data-bind="pillar-title">Music</h3>
-                  <p class="step-body" data-bind="pillar-text">
-                    Direction, enregistrement, mix. La musique porte le récit — elle n’est pas un décor.
-                  </p>
-                </div>
-                <p class="step-badge" aria-hidden="true" data-bind="pillar-number">2</p>
-              </div>
-              <div class="step-visual has-photo" data-motif="music">
-                <img class="step-photo" src="./works/studio-session.jpg" width="1448" height="1086" alt="Session d’enregistrement au studio K3CH" loading="lazy" decoding="async" />
-                <p class="step-aside" data-bind="pillar-aside">Quand ça sonne, on le sent.</p>
-              </div>
-            </li>
-            <li class="step" data-pillar="media" data-reveal>
-              <div class="step-top">
-                <div class="step-copy">
-                  <h3 data-bind="pillar-title">Media</h3>
-                  <p class="step-body" data-bind="pillar-text">
-                    Formats, plateformes, contenus. Être vu, pas seulement publié.
-                  </p>
-                </div>
-                <p class="step-badge" aria-hidden="true" data-bind="pillar-number">3</p>
-              </div>
-              <div class="step-visual has-lockup" data-motif="media">
-                <img
-                  class="step-lockup"
-                  data-media-lockup
-                  src="./brand/k3ch-logo-principal.svg"
-                  width="791"
-                  height="726"
-                  alt="K3CH Music &amp; Media — Maison K3CH Production, Alger."
-                  decoding="async"
-                  loading="lazy"
-                />
-                <p class="step-aside" data-bind="pillar-aside">Moins de bruit. Plus de présence.</p>
-              </div>
-            </li>
+          <ol class="step-list">{{{ bloc:atelier-pillars }}}
           </ol>
         </div>
       </section>
@@ -322,35 +170,26 @@
       <section id="offre" class="section offre" aria-labelledby="offre-title" tabindex="-1">
         <div class="section-inner">
           <header class="section-header">
-            <p class="offre-kicker" data-bind="offre-kicker">Studio</p>
-            <h2 id="offre-title" data-bind="offre-title">Offre</h2>
-            <p class="lede" data-bind="offre-lede">On livre le titre, pas juste l’heure.</p>
-            <p class="section-intro" data-bind="offre-intro">
-              Cabine, mix, master — Alger.
-            </p>
+            <p class="offre-kicker" data-bind="offre-kicker">{{ offre.kicker }}</p>
+            <h2 id="offre-title" data-bind="offre-title">{{ offre.title }}</h2>
+            <p class="lede" data-bind="offre-lede">{{ offre.lede }}</p>
+            <p class="section-intro" data-bind="offre-intro">{{ offre.intro }}</p>
           </header>
 
-          <ul class="prestation-list" data-bind="offre-prestations">
-            <li>Recording</li>
-            <li>Mix</li>
-            <li>Mastering</li>
-            <li>Location</li>
-            <li>Podcast / VO</li>
+          <ul class="prestation-list" data-bind="offre-prestations">{{{ bloc:offre-prestations }}}
           </ul>
 
           <div class="offre-foot">
-            <p class="offre-note" data-bind="offre-note">
-              Réservation via WhatsApp 05 59 77 10 74. Acompte 50 % pour confirmer le créneau.
-            </p>
+            <p class="offre-note" data-bind="offre-note">{{ offre.note }}</p>
             <a
               class="offre-cta"
               data-book-link
-              href="https://wa.me/213559771074?text=Bonjour%2C%20je%20souhaite%20r%C3%A9server%20une%20session%20studio."
+              href="{{{ bloc:offre-link }}}"
               aria-label="Réserver une session sur WhatsApp"
               rel="noopener noreferrer"
               target="_blank"
             >
-              <span data-bind="offre-cta">Réserver</span>
+              <span data-bind="offre-cta">{{ offre.cta }}</span>
               <span aria-hidden="true">↗</span>
             </a>
           </div>
@@ -360,25 +199,10 @@
       <section id="parcours" class="section parcours" aria-labelledby="parcours-title" tabindex="-1">
         <div class="section-inner">
           <header class="section-header compact">
-            <h2 id="parcours-title" data-bind="parcours-title">Parcours</h2>
-            <p class="section-intro" data-bind="parcours-intro">De l’intention à la réalisation.</p>
+            <h2 id="parcours-title" data-bind="parcours-title">{{ parcours.title }}</h2>
+            <p class="section-intro" data-bind="parcours-intro">{{ parcours.intro }}</p>
           </header>
-          <ol class="parcours-list">
-            <li data-step="intention" data-reveal>
-              <p class="parcours-number" data-bind="step-number">1</p>
-              <h3 data-bind="step-title">Intention</h3>
-              <p data-bind="step-text">On écoute. On clarifie le geste.</p>
-            </li>
-            <li data-step="creation" data-reveal>
-              <p class="parcours-number" data-bind="step-number">2</p>
-              <h3 data-bind="step-title">Création</h3>
-              <p data-bind="step-text">L’idée prend forme — cadre, rythme, matière.</p>
-            </li>
-            <li data-step="realisation" data-reveal>
-              <p class="parcours-number" data-bind="step-number">3</p>
-              <h3 data-bind="step-title">Réalisation</h3>
-              <p data-bind="step-text">On tourne, on assemble, on livre.</p>
-            </li>
+          <ol class="parcours-list">{{{ bloc:parcours-steps }}}
           </ol>
         </div>
       </section>
@@ -398,16 +222,16 @@
               />
             </figure>
             <div class="dondolie-copy">
-              <p class="dondolie-kicker" data-bind="dondolie-kicker">Merch</p>
+              <p class="dondolie-kicker" data-bind="dondolie-kicker">{{ dondolie.kicker }}</p>
               <h2 id="dondolie-title" data-bind="dondolie-title">dondolie</h2>
-              <p class="prose" data-bind="dondolie-text">L’or sur le noir. Une ligne à venir.</p>
-              <p class="dondolie-story" data-bind="dondolie-story">Fourmi + peace &amp; love + cœur.</p>
+              <p class="prose" data-bind="dondolie-text">{{ dondolie.text }}</p>
+              <p class="dondolie-story" data-bind="dondolie-story">{{ dondolie.story }}</p>
             </div>
           </div>
 
           <div class="dondolie-collection" aria-labelledby="dondolie-collection-title">
-            <p class="dondolie-kicker" id="dondolie-collection-title">La collection</p>
-            <p class="dondolie-soon">Bientôt disponible</p>
+            <p class="dondolie-kicker" id="dondolie-collection-title">{{ dondolie.collectionTitle }}</p>
+            <p class="dondolie-soon">{{ dondolie.soon }}</p>
             <ul class="dondolie-grid" data-dondolie-list aria-label="Collection Dondolie"></ul>
           </div>
 
@@ -424,46 +248,13 @@
       <section id="contact" class="section contact" aria-labelledby="contact-title" tabindex="-1">
         <div class="section-inner contact-inner">
           <div class="contact-copy">
-            <h2 id="contact-title" data-bind="contact-title">Contactez-nous</h2>
-            <ul class="contact-list" data-contact-list>
-              <li>
-                <a class="contact-link contact-phone" href="tel:+213559771074" aria-label="Appeler le studio au 05 59 77 10 74">
-                  <span class="contact-label">Studio</span>
-                  <span class="contact-value">
-                    <svg class="contact-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M6.6 3.5h2.6l1.4 4-1.9 1.3a11 11 0 0 0 6.5 6.5l1.3-1.9 4 1.4v2.6a2 2 0 0 1-2.1 2A16.5 16.5 0 0 1 4.6 5.6a2 2 0 0 1 2-2.1Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-                    <span>05 59 77 10 74</span>
-                  </span>
-                </a>
-              </li>
+            <h2 id="contact-title" data-bind="contact-title">{{ contact.title }}</h2>
+            <ul class="contact-list" data-contact-list>{{{ bloc:contact-phone }}}
             </ul>
           </div>
           <div class="contact-socials-wrap">
-            <p class="contact-label" id="contact-instagram-title">Instagram</p>
-            <ul class="contact-socials" aria-labelledby="contact-instagram-title">
-              <li>
-                <a class="contact-social" href="https://www.instagram.com/k3chmusic/" target="_blank" rel="noopener" aria-label="Instagram @k3chmusic (nouvel onglet)">
-                  <svg class="contact-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>
-                  <span>@k3chmusic</span>
-                </a>
-              </li>
-              <li>
-                <a class="contact-social" href="https://www.instagram.com/k3chstudio/" target="_blank" rel="noopener" aria-label="Instagram @k3chstudio (nouvel onglet)">
-                  <svg class="contact-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>
-                  <span>@k3chstudio</span>
-                </a>
-              </li>
-              <li>
-                <a class="contact-social" href="https://www.instagram.com/k3ch.vision/" target="_blank" rel="noopener" aria-label="Instagram @k3ch.vision (nouvel onglet)">
-                  <svg class="contact-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>
-                  <span>@k3ch.vision</span>
-                </a>
-              </li>
-              <li>
-                <a class="contact-social" href="https://www.instagram.com/k3ch.media/" target="_blank" rel="noopener" aria-label="Instagram @k3ch.media (nouvel onglet)">
-                  <svg class="contact-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>
-                  <span>@k3ch.media</span>
-                </a>
-              </li>
+            <p class="contact-label" id="contact-instagram-title">{{ contact.instagramTitle }}</p>
+            <ul class="contact-socials" aria-labelledby="contact-instagram-title">{{{ bloc:contact-instagram }}}
             </ul>
           </div>
         </div>
@@ -482,14 +273,14 @@
           decoding="async"
         />
         <p>
-          <span data-bind="name">Maison K3CH Production</span>
+          <span data-bind="name">{{ site.footerName }}</span>
           <span class="sep" aria-hidden="true">—</span>
-          <span data-bind="city">Alger</span>
+          <span data-bind="city">{{ site.footerCity }}</span>
         </p>
         <p>
           <span aria-hidden="true">©</span>
           <span data-bind="year"></span>
-          <span data-bind="footer-rights">Tous droits réservés.</span>
+          <span data-bind="footer-rights">{{ site.footerRights }}</span>
         </p>
       </div>
     </footer>

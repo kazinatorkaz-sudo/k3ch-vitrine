@@ -1,0 +1,33 @@
+{
+  "title": "Atelier",
+  "intro": "Le plateau, la salle, l’écran. Votre regard prime, de l’intention à la diffusion.",
+  "atmosphere": {
+    "kicker": "Studio",
+    "caption": "Cabine & contrôle",
+    "image": "/works/studio-workstation.jpg",
+    "alt": "Workstation double moniteur — cabine et contrôle, Maison K3CH Studio."
+  },
+  "pillars": [
+    {
+      "title": "Studio",
+      "text": "Captation, plateau, lumière. On cadre ce qui doit rester.",
+      "aside": "Le silence, juste avant le clap.",
+      "image": "/works/studio-wall.jpg",
+      "alt": "Mur du studio K3CH, vinyles et panneaux acoustiques"
+    },
+    {
+      "title": "Music",
+      "text": "Direction, enregistrement, mix. La musique porte le récit — elle n’est pas un décor.",
+      "aside": "Quand ça sonne, on le sent.",
+      "image": "/works/studio-session.jpg",
+      "alt": "Session d’enregistrement au studio K3CH"
+    },
+    {
+      "title": "Media",
+      "text": "Formats, plateformes, contenus. Être vu, pas seulement publié.",
+      "aside": "Moins de bruit. Plus de présence.",
+      "image": "",
+      "alt": "K3CH Music & Media — Maison K3CH Production, Alger."
+    }
+  ]
+}

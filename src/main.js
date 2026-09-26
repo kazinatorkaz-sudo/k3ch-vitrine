@@ -1,40 +1,8 @@
 import "./styles.css";
-import { copy } from "./config.js";
 import { renderLabel } from "./label.js";
 import { renderDondolie } from "./dondolie.js";
 
 document.documentElement.classList.add("js");
-
-const setText = (root, name, value) => {
-  const el = root.querySelector(`[data-bind="${name}"]`);
-  if (el && value != null) el.textContent = value;
-};
-
-const setImage = (el, item) => {
-  if (!el || !item) return;
-  el.src = item.image || item.src;
-  if (item.imageAlt || item.alt) el.alt = item.imageAlt || item.alt;
-  if (item.width) el.width = item.width;
-  if (item.height) el.height = item.height;
-};
-
-function applyVisuals() {
-  for (const work of copy.works) {
-    const root = document.querySelector(`[data-work-piece="${work.id}"]`);
-    if (!root) continue;
-    setText(root, "work-kicker", work.kicker);
-    setText(root, "work-title", work.title);
-    setText(root, "work-caption", work.caption);
-    setImage(root.querySelector("[data-work-image]"), work);
-  }
-
-  const atmosphere = document.querySelector("[data-atelier-atmosphere]");
-  if (atmosphere) {
-    setText(atmosphere, "atmosphere-kicker", copy.atelierAtmosphere.kicker);
-    setText(atmosphere, "atmosphere-caption", copy.atelierAtmosphere.caption);
-    setImage(atmosphere.querySelector("[data-atmosphere-image]"), copy.atelierAtmosphere);
-  }
-}
 
 function setupNavigation() {
   const toggle = document.querySelector("[data-nav-toggle]");
@@ -70,7 +38,6 @@ function setupReveal() {
   items.forEach((item) => observer.observe(item));
 }
 
-applyVisuals();
 renderLabel(document.querySelector("[data-label-list]"));
 renderDondolie(document.querySelector("[data-dondolie-list]"), document.querySelector("[data-dondolie-lightbox]"));
 setupNavigation();

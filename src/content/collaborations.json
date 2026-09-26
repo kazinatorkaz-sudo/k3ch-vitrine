@@ -1,0 +1,56 @@
+{
+  "title": "Collaborations",
+  "intro": "Media — image, récit, présence.",
+  "pieces": [
+    {
+      "kicker": "Media",
+      "title": "LOST ERA",
+      "caption": "Visuel.",
+      "image": "/works/lost-era-duo.jpg",
+      "alt": "LOST ERA — deux silhouettes dos à dos, les yeux bandés, titre bleu électrique.",
+      "format": "paysage"
+    },
+    {
+      "kicker": "PSYCONCE",
+      "title": "LOST ERA",
+      "caption": "Affiche.",
+      "image": "/works/lost-era-psyconce.jpg",
+      "alt": "Affiche LOST ERA, PSYCONCE — un visage levé vers le noir.",
+      "format": "portrait"
+    }
+  ],
+  "studio": [
+    {
+      "kicker": "Studio",
+      "title": "Cabine",
+      "caption": "Prise de voix",
+      "image": "/works/studio-booth.jpg",
+      "alt": "Cabine vocal — prise de voix, Maison K3CH Studio.",
+      "format": "portrait"
+    },
+    {
+      "kicker": "Studio",
+      "title": "Session",
+      "caption": "Mix & direction",
+      "image": "/works/studio-session.jpg",
+      "alt": "Session mix — tee-shirts logo, Maison K3CH Studio.",
+      "format": "paysage"
+    },
+    {
+      "kicker": "Studio",
+      "title": "Mur",
+      "caption": "Mur K3CH Studio",
+      "image": "/works/studio-wall.jpg",
+      "alt": "Mur K3CH STUDIO et vinyles — Maison K3CH Studio.",
+      "format": "paysage"
+    },
+    {
+      "kicker": "Studio",
+      "title": "Desk",
+      "caption": "Contrôle",
+      "image": "/works/studio-desk.jpg",
+      "alt": "Desk vue plongée — contrôle, Maison K3CH Studio.",
+      "format": "portrait"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "kicker": "Studio",
+  "title": "Offre",
+  "lede": "On livre le titre, pas juste l’heure.",
+  "intro": "Cabine, mix, master — Alger.",
+  "prestations": [
+    "Recording",
+    "Mix",
+    "Mastering",
+    "Location",
+    "Podcast / VO"
+  ],
+  "note": "Réservation via WhatsApp 05 59 77 10 74. Acompte 50 % pour confirmer le créneau.",
+  "cta": "Réserver",
+  "whatsapp": "213559771074",
+  "bookingMessage": "Bonjour, je souhaite réserver une session studio."
+}

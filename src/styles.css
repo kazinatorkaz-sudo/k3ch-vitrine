@@ -20,6 +20,16 @@
   /* Dégradé de fond des planches de la charte : Graphite → Obsidian. */
   --charte-gradient: linear-gradient(160deg, var(--graphite) 0%, var(--obsidian) 100%);
   --font: "Montserrat", sans-serif;
+  /* Typographie réglable depuis l'admin (src/content/typo.json → <style id="typo"> dans index.html).
+     Valeurs par défaut = charte : Montserrat partout, échelle 1 (tailles d'origine). */
+  --font-titres: var(--font);
+  --font-soustitres: var(--font);
+  --font-texte: var(--font);
+  --font-boutons: var(--font);
+  --ts-titres: 1;
+  --ts-soustitres: 1;
+  --ts-texte: 1;
+  --ts-boutons: 1;
   --space: clamp(1.35rem, 5.5vw, 5.25rem);
   --section: clamp(5.5rem, 16vw, 11rem);
   --content: min(84rem, calc(100% - 2 * var(--space)));
@@ -57,9 +67,9 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: var(--font);
+  font-family: var(--font-texte);
   font-weight: 400;
-  font-size: 1.05rem;
+  font-size: calc(1.05rem * var(--ts-texte, 1));
   line-height: 1.55;
   color: var(--ivory-mute);
   background: var(--bg);
@@ -247,7 +257,8 @@ body.nav-open::after {
   padding: 0.8rem 0;
   color: var(--ivory-mute);
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: calc(0.85rem * var(--ts-boutons, 1));
+  font-family: var(--font-boutons);
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -282,7 +293,8 @@ body.nav-open::after {
 .hero-title,
 .hero h1 {
   margin: 0;
-  font-size: clamp(1.35rem, 3vw, 1.95rem);
+  font-size: calc(clamp(1.35rem, 3vw, 1.95rem) * var(--ts-titres, 1));
+  font-family: var(--font-titres);
   font-weight: 600;
   line-height: 1.3;
   letter-spacing: 0;
@@ -305,14 +317,15 @@ body.nav-open::after {
   gap: 0.45rem;
   color: var(--ivory-mute);
   text-decoration: none;
-  font-size: 0.72rem;
+  font-size: calc(0.72rem * var(--ts-boutons, 1));
+  font-family: var(--font-boutons);
   font-weight: 500;
   letter-spacing: 0.28em;
   text-transform: uppercase;
 }
 
 .hero-link [aria-hidden="true"] {
-  font-size: 0.95rem;
+  font-size: calc(0.95rem * var(--ts-boutons, 1));
   letter-spacing: 0;
 }
 
@@ -345,7 +358,8 @@ body.nav-open::after {
    (« 01 — BRAND DNA »), précédés du pictogramme de la charte. */
 .section h2 {
   margin: 0;
-  font-size: clamp(2.1rem, 7.4vw, 5.25rem);
+  font-size: calc(clamp(2.1rem, 7.4vw, 5.25rem) * var(--ts-titres, 1));
+  font-family: var(--font-titres);
   font-weight: 700;
   line-height: 1.02;
   letter-spacing: 0.02em;
@@ -368,7 +382,7 @@ body.nav-open::after {
 .manifesto {
   margin: clamp(1.75rem, 4vw, 3rem) 0 0;
   max-width: 38rem;
-  font-size: clamp(1.25rem, 2.2vw, 1.8rem);
+  font-size: calc(clamp(1.25rem, 2.2vw, 1.8rem) * var(--ts-texte, 1));
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: 0;
@@ -379,7 +393,7 @@ body.nav-open::after {
 .section-intro {
   margin: 1.15rem 0 0;
   max-width: var(--measure);
-  font-size: 1rem;
+  font-size: calc(1rem * var(--ts-texte, 1));
   line-height: 1.6;
 }
 
@@ -396,7 +410,8 @@ body.nav-open::after {
 }
 
 .section-header.compact h2 {
-  font-size: clamp(1.9rem, 6vw, 3.75rem);
+  font-size: calc(clamp(1.9rem, 6vw, 3.75rem) * var(--ts-titres, 1));
+  font-family: var(--font-titres);
 }
 
 .works-grid,
@@ -458,7 +473,8 @@ body.nav-open::after {
 
 .work-label {
   margin: 0;
-  font-size: 0.72rem;
+  font-size: calc(0.72rem * var(--ts-soustitres, 1));
+  font-family: var(--font-soustitres);
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -467,7 +483,7 @@ body.nav-open::after {
 
 .work-line {
   margin: 0.35rem 0 0;
-  font-size: clamp(1.45rem, 2.8vw, 1.95rem);
+  font-size: calc(clamp(1.45rem, 2.8vw, 1.95rem) * var(--ts-texte, 1));
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: 0;
@@ -476,7 +492,7 @@ body.nav-open::after {
 
 .works-note {
   margin: 1.25rem 0 0;
-  font-size: 0.82rem;
+  font-size: calc(0.82rem * var(--ts-texte, 1));
   color: var(--ivory-dim);
 }
 
@@ -536,7 +552,8 @@ body.nav-open::after {
 
 .piece-kicker {
   margin: 0;
-  font-size: 0.72rem;
+  font-size: calc(0.72rem * var(--ts-soustitres, 1));
+  font-family: var(--font-soustitres);
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -545,7 +562,8 @@ body.nav-open::after {
 
 .piece h3 {
   margin: 0.28rem 0 0;
-  font-size: clamp(1.25rem, 2.3vw, 1.65rem);
+  font-size: calc(clamp(1.25rem, 2.3vw, 1.65rem) * var(--ts-soustitres, 1));
+  font-family: var(--font-soustitres);
   font-weight: 600;
   letter-spacing: 0;
   color: var(--ivory);
@@ -554,7 +572,7 @@ body.nav-open::after {
 .piece-caption,
 .atmosphere-caption {
   margin: 0.28rem 0 0;
-  font-size: 0.95rem;
+  font-size: calc(0.95rem * var(--ts-texte, 1));
   color: var(--ivory-mute);
 }
 
@@ -569,7 +587,7 @@ body.nav-open::after {
 
 .equipe-frame figcaption {
   margin-top: 0.85rem;
-  font-size: 0.82rem;
+  font-size: calc(0.82rem * var(--ts-texte, 1));
   color: var(--ivory-dim);
 }
 
@@ -613,7 +631,7 @@ body.nav-open::after {
 .step-visual.has-lockup .step-aside {
   justify-self: start;
   max-width: 24ch;
-  font-size: clamp(1.05rem, 2.2vw, 1.4rem);
+  font-size: calc(clamp(1.05rem, 2.2vw, 1.4rem) * var(--ts-texte, 1));
   line-height: 1.3;
   letter-spacing: 0;
   color: var(--ivory);
@@ -640,7 +658,8 @@ body.nav-open::after {
 
 .step h3 {
   margin: 0 0 0.9rem;
-  font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+  font-size: calc(clamp(1.4rem, 2.4vw, 1.85rem) * var(--ts-soustitres, 1));
+  font-family: var(--font-soustitres);
   font-weight: 600;
   letter-spacing: 0;
   color: var(--ivory);
@@ -659,7 +678,8 @@ body.nav-open::after {
   margin: 0.15rem 0 0;
   border: 1px solid var(--line-strong);
   border-radius: 50%;
-  font-size: 1.15rem;
+  font-size: calc(1.15rem * var(--ts-soustitres, 1));
+  font-family: var(--font-soustitres);
   font-weight: 300;
   color: var(--ivory);
 }
@@ -745,7 +765,7 @@ body.nav-open::after {
   z-index: 1;
   margin: 0;
   max-width: 18ch;
-  font-size: clamp(1.6rem, 5.2vw, 3.6rem);
+  font-size: calc(clamp(1.6rem, 5.2vw, 3.6rem) * var(--ts-texte, 1));
   font-weight: 600;
   line-height: 1.1;
   letter-spacing: 0;
@@ -759,14 +779,16 @@ body.nav-open::after {
 
 .parcours-number {
   margin: 0 0 0.65rem;
-  font-size: 0.8rem;
+  font-size: calc(0.8rem * var(--ts-soustitres, 1));
+  font-family: var(--font-soustitres);
   font-weight: 300;
   color: var(--copper);
 }
 
 .parcours-list h3 {
   margin: 0 0 0.4rem;
-  font-size: 1.35rem;
+  font-size: calc(1.35rem * var(--ts-soustitres, 1));
+  font-family: var(--font-soustitres);
   font-weight: 600;
   letter-spacing: 0;
   color: var(--ivory);
@@ -779,7 +801,8 @@ body.nav-open::after {
 
 .offre-kicker {
   margin: 0 0 0.85rem;
-  font-size: 0.72rem;
+  font-size: calc(0.72rem * var(--ts-soustitres, 1));
+  font-family: var(--font-soustitres);
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -810,7 +833,8 @@ body.nav-open::after {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  font-size: 0.78rem;
+  font-size: calc(0.78rem * var(--ts-boutons, 1));
+  font-family: var(--font-boutons);
   font-weight: 400;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -845,7 +869,8 @@ body.nav-open::after {
 
 .pack-kicker {
   margin: 0;
-  font-size: 0.72rem;
+  font-size: calc(0.72rem * var(--ts-soustitres, 1));
+  font-family: var(--font-soustitres);
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -858,7 +883,8 @@ body.nav-open::after {
 
 .pack-card h3 {
   margin: 0.4rem 0 0;
-  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  font-size: calc(clamp(1.3rem, 2.4vw, 1.7rem) * var(--ts-soustitres, 1));
+  font-family: var(--font-soustitres);
   font-weight: 600;
   letter-spacing: 0;
   color: var(--ivory);
@@ -866,7 +892,8 @@ body.nav-open::after {
 
 .pack-price {
   margin: 1.15rem 0 0;
-  font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+  font-size: calc(clamp(1.6rem, 3.2vw, 2.2rem) * var(--ts-soustitres, 1));
+  font-family: var(--font-soustitres);
   font-weight: 300;
   letter-spacing: 0;
   color: var(--ivory);
@@ -875,7 +902,7 @@ body.nav-open::after {
 .pack-text {
   margin: 0.45rem 0 0;
   max-width: 18rem;
-  font-size: 0.95rem;
+  font-size: calc(0.95rem * var(--ts-texte, 1));
   color: var(--ivory-mute);
 }
 
@@ -887,7 +914,8 @@ body.nav-open::after {
 
 .tarif-group h3 {
   margin: 0 0 1.1rem;
-  font-size: 0.85rem;
+  font-size: calc(0.85rem * var(--ts-soustitres, 1));
+  font-family: var(--font-soustitres);
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -924,7 +952,7 @@ body.nav-open::after {
 
 .tarif-note {
   grid-column: 1 / -1;
-  font-size: 0.82rem;
+  font-size: calc(0.82rem * var(--ts-texte, 1));
   color: var(--ivory-dim);
 }
 
@@ -937,7 +965,7 @@ body.nav-open::after {
 
 .offre-note {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: calc(0.95rem * var(--ts-texte, 1));
   line-height: 1.55;
   color: var(--ivory-mute);
 }
@@ -951,7 +979,8 @@ body.nav-open::after {
   border: 1px solid var(--off-white);
   color: var(--ivory);
   text-decoration: none;
-  font-size: 0.72rem;
+  font-size: calc(0.72rem * var(--ts-boutons, 1));
+  font-family: var(--font-boutons);
   font-weight: 600;
   letter-spacing: 0.28em;
   text-transform: uppercase;
@@ -959,7 +988,7 @@ body.nav-open::after {
 }
 
 .offre-cta [aria-hidden="true"] {
-  font-size: 0.95rem;
+  font-size: calc(0.95rem * var(--ts-boutons, 1));
   letter-spacing: 0;
 }
 
@@ -982,6 +1011,17 @@ body.nav-open::after {
   padding: clamp(3.5rem, 9vw, 7rem) 0;
   background: var(--dondolie-navy);
   color: var(--dondolie-sand);
+  /* Charte Dondolie : non concernée par les réglages Typographie de l'admin. */
+  --font-titres: var(--font);
+  --font-soustitres: var(--font);
+  --font-texte: var(--font);
+  --font-boutons: var(--font);
+  --ts-titres: 1;
+  --ts-soustitres: 1;
+  --ts-texte: 1;
+  --ts-boutons: 1;
+  font-family: var(--font);
+  font-size: 1.05rem;
 }
 
 .dondolie-stage {
@@ -1071,7 +1111,8 @@ body.nav-open::after {
 }
 
 .contact h2 {
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-size: calc(clamp(1.6rem, 3vw, 2.2rem) * var(--ts-titres, 1));
+  font-family: var(--font-titres);
 }
 
 .contact-inner {
@@ -1098,7 +1139,8 @@ body.nav-open::after {
 
 .contact-label {
   margin: 0;
-  font-size: 0.72rem;
+  font-size: calc(0.72rem * var(--ts-soustitres, 1));
+  font-family: var(--font-soustitres);
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -1109,7 +1151,7 @@ body.nav-open::after {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+  font-size: calc(clamp(1.15rem, 2.4vw, 1.45rem) * var(--ts-texte, 1));
   font-weight: 500;
   letter-spacing: 0.04em;
   color: inherit;
@@ -1144,7 +1186,7 @@ body.nav-open::after {
   padding: 0 0.1rem;
   color: var(--ivory);
   text-decoration: none;
-  font-size: 0.98rem;
+  font-size: calc(0.98rem * var(--ts-texte, 1));
   font-weight: 500;
   letter-spacing: 0.03em;
   transition: color 0.2s ease;
@@ -1170,7 +1212,7 @@ body.nav-open::after {
   gap: 0.3rem;
   padding-top: 1.4rem;
   border-top: 1px solid var(--line);
-  font-size: 0.8rem;
+  font-size: calc(0.8rem * var(--ts-texte, 1));
   color: var(--ivory-dim);
 }
 
@@ -1217,7 +1259,7 @@ body.nav-open::after {
 
   .site-nav a {
     padding: 0.25rem 0;
-    font-size: 0.7rem;
+    font-size: calc(0.7rem * var(--ts-boutons, 1));
   }
 
   .pieces-grid {
@@ -1257,7 +1299,7 @@ body.nav-open::after {
   .step-badge {
     width: 5.5rem;
     height: 5.5rem;
-    font-size: 1.3rem;
+    font-size: calc(1.3rem * var(--ts-soustitres, 1));
     margin-top: 0.2rem;
     justify-self: end;
   }
@@ -1308,7 +1350,7 @@ body.nav-open::after {
 
 @media (min-width: 1100px) {
   .hero h1 {
-    font-size: 2.05rem;
+    font-size: calc(2.05rem * var(--ts-titres, 1));
   }
 
   .site-nav ul {
@@ -1316,7 +1358,7 @@ body.nav-open::after {
   }
 
   .site-nav a {
-    font-size: 0.72rem;
+    font-size: calc(0.72rem * var(--ts-boutons, 1));
   }
 
   .step-aside {
@@ -1327,7 +1369,7 @@ body.nav-open::after {
 /* Tarifs dynamiques (Google Sheet) */
 .tarif-status {
   margin: 1.5rem 0 0;
-  font-size: 0.78rem;
+  font-size: calc(0.78rem * var(--ts-texte, 1));
   letter-spacing: 0.08em;
   color: var(--copper);
 }
@@ -1478,7 +1520,7 @@ body.nav-open::after {
 
   .site-nav a {
     padding: 0.8rem 0;
-    font-size: 0.85rem;
+    font-size: calc(0.85rem * var(--ts-boutons, 1));
   }
 }
 

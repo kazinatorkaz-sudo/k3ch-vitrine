@@ -7,6 +7,8 @@
 import products from "./dondolie.json";
 
 const base = import.meta.env.BASE_URL;
+/** "/dondolie/x.webp", "dondolie/x.webp" ou URL complète → URL publique (base GitHub Pages incluse). */
+const asset = (p) => (/^(https?:)?\/\//.test(p) ? p : `${base}${String(p).replace(/^\.?\/+/, "")}`);
 
 function el(tag, attrs = {}, children = []) {
   const node = document.createElement(tag);
@@ -35,7 +37,7 @@ function setupLightbox(dialog) {
   });
   return (product, trigger) => {
     opener = trigger;
-    img.src = `${base}${product.image}`;
+    img.src = asset(product.image);
     img.alt = product.alt || product.label;
     caption.textContent = product.label;
     document.body.classList.add("lightbox-open");
@@ -49,7 +51,7 @@ export function renderDondolie(list, dialog) {
   const open = setupLightbox(dialog);
   const items = products.filter((p) => p && p.image).map((product) => {
     const img = el("img", {
-      src: `${base}${product.image}`,
+      src: asset(product.image),
       width: "800",
       height: "1000",
       alt: product.alt || product.label,
