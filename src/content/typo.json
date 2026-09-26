@@ -1,7 +1,7 @@
 {
   "titres": {
     "police": "Montserrat",
-    "taille": "1"
+    "taille": "1.12"
   },
   "soustitres": {
     "police": "Montserrat",
@@ -13,6 +13,6 @@
   },
   "boutons": {
     "police": "Montserrat",
-    "taille": "1"
+    "taille": "0.9"
   }
 }
