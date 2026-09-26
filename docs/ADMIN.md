@@ -31,7 +31,7 @@ Vous restez connecté sur ce navigateur. Sur un ordinateur partagé, déconnecte
 
 - **Sections du site** : les textes et photos de chaque section, dans l'ordre de la page (Général, Accueil, Maison, Collaborations, Label, Équipe, Atelier, Offre, Parcours, Dondolie, Contact).
 - **Listes** : les titres YouTube du Label et les produits de la collection Dondolie.
-- **Réglages → Typographie** : la police et la taille des titres, des sous-titres, du texte courant, des boutons et du menu. **Montserrat** avec la taille **Normal** correspond à la charte K3CH, c'est le réglage d'origine. La section Dondolie garde sa propre charte et n'est pas concernée.
+- **Réglages → Typographie** : la police et la taille des titres, des sous-titres, du texte courant, des boutons et du menu, ainsi que celles de l'**accroche** et de la **sous-accroche** du haut de page, réglables séparément. L'accroche a une taille de plus, **Énorme**. **Montserrat** avec la taille **Normal** correspond à la charte K3CH, c'est le réglage d'origine. La section Dondolie garde sa propre charte et n'est pas concernée.
 
 Ouvrez un élément, faites vos changements, puis cliquez sur **Enregistrer**.
 

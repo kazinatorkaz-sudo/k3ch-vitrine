@@ -275,10 +275,10 @@ collections:
         file: src/content/typo.json
         fields:
           - name: titres
-            label: "Titres (grands titres de section, accroche)"
+            label: "Titres (grands titres de section)"
             widget: object
             collapsed: false
-            hint: "Titres de section et accroche du haut de page. Montserrat + Normal = charte K3CH (réglage d'origine), pour chaque rôle. La section Dondolie garde sa propre charte."
+            hint: "Titres des sections (Maison, Offre, Contact…). Montserrat + Normal = charte K3CH (réglage d'origine), pour chaque rôle. La section Dondolie garde sa propre charte."
             fields:
               - { name: police, label: Police, widget: select, default: Montserrat, options: &polices [{ label: "Montserrat (charte K3CH)", value: "Montserrat" }, { label: "Inter", value: "Inter" }, { label: "Poppins", value: "Poppins" }, { label: "Raleway", value: "Raleway" }, { label: "Work Sans", value: "Work Sans" }, { label: "DM Sans", value: "DM Sans" }, { label: "Manrope", value: "Manrope" }, { label: "Outfit", value: "Outfit" }, { label: "Space Grotesk", value: "Space Grotesk" }, { label: "Archivo", value: "Archivo" }, { label: "Oswald", value: "Oswald" }, { label: "Bebas Neue", value: "Bebas Neue" }, { label: "Playfair Display", value: "Playfair Display" }, { label: "Cormorant Garamond", value: "Cormorant Garamond" }] }
               - { name: taille, label: Taille, widget: select, default: "1", options: &tailles [{ label: "Petit", value: "0.9" }, { label: "Normal (charte)", value: "1" }, { label: "Grand", value: "1.12" }, { label: "Très grand", value: "1.25" }] }
@@ -303,6 +303,22 @@ collections:
             widget: object
             collapsed: false
             hint: "Menu, boutons, liste des prestations."
+            fields:
+              - { name: police, label: Police, widget: select, default: Montserrat, options: *polices }
+              - { name: taille, label: Taille, widget: select, default: "1", options: *tailles }
+          - name: accroche
+            label: "Accroche (haut de page)"
+            widget: object
+            collapsed: false
+            hint: "La grande phrase du haut de page (Accueil → Accroche)."
+            fields:
+              - { name: police, label: Police, widget: select, default: Montserrat, options: *polices }
+              - { name: taille, label: Taille, widget: select, default: "1", options: [{ label: "Petit", value: "0.9" }, { label: "Normal (charte)", value: "1" }, { label: "Grand", value: "1.12" }, { label: "Très grand", value: "1.25" }, { label: "Énorme", value: "1.5" }] }
+          - name: sousaccroche
+            label: "Sous-accroche (haut de page)"
+            widget: object
+            collapsed: false
+            hint: "La phrase sous l'accroche (Accueil → Sous-accroche)."
             fields:
               - { name: police, label: Police, widget: select, default: Montserrat, options: *polices }
               - { name: taille, label: Taille, widget: select, default: "1", options: *tailles }

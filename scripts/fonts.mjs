@@ -26,3 +26,6 @@ export const SIZES = [
   ["1.12", "Grand"],
   ["1.25", "Très grand"],
 ];
+
+// L'accroche (titre du haut de page) peut aller une taille plus loin.
+export const SIZES_ACCROCHE = [...SIZES, ["1.5", "Énorme"]];

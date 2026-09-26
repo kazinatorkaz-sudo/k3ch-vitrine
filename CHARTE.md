@@ -19,7 +19,7 @@ Les logos et le pictogramme ont été extraits **en vectoriel** depuis le PDF (p
 | **Style photo** (planche 01) : noir et blanc, contrasté | Photos de la maison (studio, équipe, atelier) en noir et blanc via CSS (`grayscale(1) contrast(1.06)`) ; fichiers d'origine inchangés. |
 
 ## Typographie réglable (admin)
-L'admin (`/admin/`, Réglages → Typographie, fichier `src/content/typo.json`) permet de changer la police et la taille (Petit, Normal, Grand, Très grand) de quatre rôles : titres, sous-titres, texte courant, boutons et menu. Ces réglages passent par des variables CSS (`--font-*`, `--ts-*`). **Montserrat + Normal partout = charte** ; c'est le réglage par défaut. La section Dondolie remet ces variables à zéro et garde sa propre charte.
+L'admin (`/admin/`, Réglages → Typographie, fichier `src/content/typo.json`) permet de changer la police et la taille (Petit, Normal, Grand, Très grand) de six rôles : titres, sous-titres, texte courant, boutons et menu, accroche et sous-accroche du haut de page (l'accroche a en plus la taille Énorme). Ces réglages passent par des variables CSS (`--font-*`, `--ts-*`). **Montserrat + Normal partout = charte** ; c'est le réglage par défaut. La section Dondolie remet ces variables à zéro et garde sa propre charte.
 
 ## Exception Dondolie
 Dondolie est une sous-marque (merch) avec sa propre charte (`dondolie logo.pdf`). Elle s'applique **uniquement à la section `#dondolie`** ; le reste du site suit la charte K3CH ci-dessus.

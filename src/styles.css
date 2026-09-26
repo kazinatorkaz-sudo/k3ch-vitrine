@@ -30,6 +30,10 @@
   --ts-soustitres: 1;
   --ts-texte: 1;
   --ts-boutons: 1;
+  --font-accroche: var(--font);
+  --font-sousaccroche: var(--font);
+  --ts-accroche: 1;
+  --ts-sousaccroche: 1;
   --space: clamp(1.35rem, 5.5vw, 5.25rem);
   --section: clamp(5.5rem, 16vw, 11rem);
   --content: min(84rem, calc(100% - 2 * var(--space)));
@@ -290,11 +294,17 @@ body.nav-open::after {
   height: auto;
 }
 
+/* Accroche et sous-accroche : réglages Typographie dédiés (--font/--ts-accroche, --font/--ts-sousaccroche).
+   --hero-size = taille de base commune (celle d'origine), multipliée par l'échelle de chacune. */
+.hero {
+  --hero-size: clamp(1.35rem, 3vw, 1.95rem);
+}
+
 .hero-title,
 .hero h1 {
   margin: 0;
-  font-size: calc(clamp(1.35rem, 3vw, 1.95rem) * var(--ts-titres, 1));
-  font-family: var(--font-titres);
+  font-size: calc(var(--hero-size) * var(--ts-accroche, 1));
+  font-family: var(--font-accroche);
   font-weight: 600;
   line-height: 1.3;
   letter-spacing: 0;
@@ -302,6 +312,8 @@ body.nav-open::after {
 }
 
 .hero-line {
+  font-family: var(--font-sousaccroche);
+  font-size: calc(var(--hero-size) * var(--ts-sousaccroche, 1));
   font-weight: 400;
   color: var(--soft-grey);
 }
@@ -1349,8 +1361,8 @@ body.nav-open::after {
 }
 
 @media (min-width: 1100px) {
-  .hero h1 {
-    font-size: calc(2.05rem * var(--ts-titres, 1));
+  .hero {
+    --hero-size: 2.05rem;
   }
 
   .site-nav ul {

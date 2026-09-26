@@ -14,5 +14,13 @@
   "boutons": {
     "police": "Montserrat",
     "taille": "0.9"
+  },
+  "accroche": {
+    "police": "Montserrat",
+    "taille": "1.25"
+  },
+  "sousaccroche": {
+    "police": "Montserrat",
+    "taille": "1.25"
   }
 }

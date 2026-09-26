@@ -7,7 +7,7 @@
  */
 import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
-import { FONTS, SIZES } from "./fonts.mjs";
+import { FONTS, SIZES, SIZES_ACCROCHE } from "./fonts.mjs";
 import { imageSize } from "./image-size.mjs";
 
 const publicDir = new URL("../public/", import.meta.url);
@@ -59,15 +59,24 @@ function piece(it, i, eager) {
 }
 
 export function typoCss(t = {}) {
-  const roles = { titres: "titres", soustitres: "soustitres", texte: "texte", boutons: "boutons" };
+  // Accroche / sous-accroche (haut de page) : réglages propres ; s'ils manquent, ils suivent « titres »
+  // (comportement d'avant leur création).
+  const roles = {
+    titres: { sizes: SIZES },
+    soustitres: { sizes: SIZES },
+    texte: { sizes: SIZES },
+    boutons: { sizes: SIZES },
+    accroche: { sizes: SIZES_ACCROCHE, fallback: "titres" },
+    sousaccroche: { sizes: SIZES, fallback: "titres" },
+  };
   const vars = [];
   const families = new Set();
-  for (const [key, name] of Object.entries(roles)) {
-    const r = t[key] || {};
+  for (const [name, role] of Object.entries(roles)) {
+    const r = t[name] || (role.fallback && t[role.fallback]) || {};
     const font = FONTS[r.police] ? r.police : "Montserrat";
     families.add(font);
     vars.push(`--font-${name}: "${font}", ${FONTS[font].fallback};`);
-    const size = SIZES.some(([v]) => v === String(r.taille)) ? String(r.taille) : "1";
+    const size = role.sizes.some(([v]) => v === String(r.taille)) ? String(r.taille) : "1";
     vars.push(`--ts-${name}: ${size};`);
   }
   // Montserrat (charte) est déjà chargée dans index.html ; on n'ajoute que les autres polices choisies.
