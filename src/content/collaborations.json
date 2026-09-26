@@ -1,11 +1,11 @@
 {
   "title": "Collaborations",
-  "intro": "Media — image, récit, présence.",
+  "intro": "Media — image, récit, présence",
   "pieces": [
     {
       "kicker": "Media",
       "title": "LOST ERA",
-      "caption": "Visuel.",
+      "caption": "Emotion",
       "image": "/works/lost-era-duo.jpg",
       "alt": "LOST ERA — deux silhouettes dos à dos, les yeux bandés, titre bleu électrique.",
       "format": "paysage"
@@ -13,7 +13,7 @@
     {
       "kicker": "PSYCONCE",
       "title": "LOST ERA",
-      "caption": "Affiche.",
+      "caption": "ORGNC",
       "image": "/works/lost-era-psyconce.jpg",
       "alt": "Affiche LOST ERA, PSYCONCE — un visage levé vers le noir.",
       "format": "portrait"
