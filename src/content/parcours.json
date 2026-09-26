@@ -1,18 +1,18 @@
 {
   "title": "Parcours",
-  "intro": "De l’intention à la réalisation.",
+  "intro": "De l’intention à la réalisation",
   "steps": [
     {
       "title": "Intention",
-      "text": "On écoute. On clarifie le geste."
+      "text": "On écoute. On clarifie le geste"
     },
     {
       "title": "Création",
-      "text": "L’idée prend forme — cadre, rythme, matière."
+      "text": "L’idée prend forme — cadre, rythme, matière"
     },
     {
       "title": "Réalisation",
-      "text": "On tourne, on assemble, on livre."
+      "text": "On tourne, on assemble, on livre"
     }
   ]
 }
